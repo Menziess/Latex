@@ -1,0 +1,91 @@
+%%%%%%%%%%%%%%%%
+%% Preambule  %%
+%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}         
+
+\usepackage{amsmath,amsfonts,amssymb} 
+\usepackage{upgreek}                  
+\usepackage{enumerate}             
+\usepackage{multicol}           
+\usepackage{scrextend}
+
+\usepackage[all]{xy}                
+\usepackage{tikz-qtree}               
+\usepackage[margin=2.5cm]{geometry} 
+
+\usepackage{fancyhdr}             
+\usepackage{lastpage}               
+\setlength{\parindent}{0pt}        
+
+\pagestyle{fancy}                 
+
+\lhead{\opdrachtNaam\ \opdrachtNummer}           
+\rhead{\naam(\studentNummer)}               
+\rfoot{Pagina\ \thepage\ van\ \pageref{LastPage}}
+\lfoot{\datum}                              
+\cfoot{}                                        
+
+\renewcommand\headrulewidth{0.4pt}  
+\renewcommand\footrulewidth{0.4pt}
+
+\newcommand{\E}{\exists} 
+\newcommand{\A}{\forall}
+
+\newcommand{\ccen}[2]{\llap{$#1$}${}\mathrel{\circ}{}$\rlap{$#2$}}
+
+%%%%%%%%%%%%%%
+%% Gegevens %%
+%%%%%%%%%%%%%%
+
+% Vul hier je gegevens in.
+
+\newcommand{\naam}          {Naam}
+\newcommand{\studentNummer} {Studentnummer}
+\newcommand{\opdrachtNaam}  {Naam Opdracht}
+\newcommand{\opdrachtNummer}{}
+\newcommand{\datum}         {Datum}
+
+%%%%%%%%%%%%%%%%
+%% Antwoorden %%
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\section*{Opgave 0.0}
+
+%%%%%%%%%%%%%%%%%%%%
+%% Einde document %%
+%%%%%%%%%%%%%%%%%%%%
+
+\end{document} 
+
+Na de afsluiting van de 'document' omgeving wordt alles in je broncode genegeerd. Zoals je ziet hebben we geen procent teken meer nodig om te voorkomen dat deze tekst geïnterpreteerd wordt door de compiler. Dit maakt het een handige plek om codefragmenten te zetten die je vaak nodig hebt (om te copy-pasten). Als volgt wat voorbeelden.
+
+% Lijst
+
+\begin{enumerate}
+\item 
+\end{enumerate}
+
+% Waarheidstabel
+
+\begin{tabular}{c|c}
+ &  \\
+ & 
+\end{tabular}
+
+% Semantisch tableau
+
+% \vspace{0.5cm}
+% \hspace{6.5cm}
+\begin{center}                          
+\begin{tikzpicture}[
+ sibling distance=2cm
+] 
+\Tree 
+[.\ccen{}{}
+[.\ccen{}{}
+] ]
+\end{tikzpicture}
+\end{center}
