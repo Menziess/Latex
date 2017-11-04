@@ -18,8 +18,8 @@
 \usepackage{lastpage}
 \usepackage{tikz}
 
-\usetikzlibrary{positioning,arrows,calc}
-\tikzset{ modal/.style={>=stealth’,shorten >=1pt,shorten <=1pt,auto,node distance=1.5cm, semithick}, world/.style={circle,draw,minimum size=0.5cm,fill=gray!15}, point/.style={circle,draw,inner sep=0.5mm,fill=black}, reflexive above/.style={->,loop,looseness=7,in=120,out=60}, reflexive below/.style={->,loop,looseness=7,in=240,out=300}, reflexive left/.style={->,loop,looseness=7,in=150,out=210}, reflexive right/.style={->,loop,looseness=7,in=30,out=330} }
+% \usetikzlibrary{positioning,arrows,calc}
+% \tikzset{ modal/.style={>=stealth’,shorten >=1pt,shorten <=1pt,auto,node distance=1.5cm, semithick}, world/.style={circle,draw,minimum size=0.5cm,fill=gray!15}, point/.style={circle,draw,inner sep=0.5mm,fill=black}, reflexive above/.style={->,loop,looseness=7,in=120,out=60}, reflexive below/.style={->,loop,looseness=7,in=240,out=300}, reflexive left/.style={->,loop,looseness=7,in=150,out=210}, reflexive right/.style={->,loop,looseness=7,in=30,out=330} }
 
 \setlength{\parindent}{0pt}
 
@@ -61,7 +61,7 @@
 \section*{Opgave 2.7}
 \textit{Bewijs de idempotentie, commutativiteit en associativiteit van
 $ \cap $.}
-\newline
+\\
 
 \textbf{Proof} idempotentie: $ A \cap A = A $
 
@@ -84,17 +84,17 @@ $ (B \cap C) $.
 
 Recursively the same holds for x is contained in B and C.
 
-Then x is in A, B and C.
+Then x is in A, B and C, so x is in $ (A \cap B) $ and in C.
 
 $ \therefore $ x in $ (A \cap B) \cap C $.
 
 
 \section*{Opgave 2.17}
-\textit{Laat zien dat uit de definitie van asymmetrie volgt dat elke asymmetrische relatie irreﬂexief is.}
-\newline
+\textit{Laat zien dat uit de definitie van asymmetrie volgt dat elke asymmetrische relatie irreflexief is.}
+\\
 
 \textbf{Definition} assymmetric: Een relatie R $ \subseteq A^2 $ heet asymmetrisch wanneer voor geen enkel paar $ \langle a, b \rangle \in R $ geldt dat $ \langle b, a \rangle \in R $.
-\newline
+\\
 
 A reflexive pair $ \langle a, a \rangle \in R $ can also be reversely written as: $ \langle a, a \rangle $. By assymmetry, this relation is not assymmetric.
 
@@ -103,55 +103,66 @@ $ \therefore $ in order for R to be irreflexive, it must be asymmetric.
 
 \section*{Opgave 2.19}
 \textit{Teken een plaatje van een relatie die noch transitief, noch intransitief is.}
-\newline
+\\
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=90mm]{image1.png}
-\caption{Niet reflexief, niet irreﬂexief \label{overflow}}
+\caption{Not transitive, not intransitive \label{overflow}}
 \end{figure}
 
 \section*{Opgave 2.20}
 \textit{1. Laat zien dat een asymmetrische relatie altijd anti-symmetrisch is.}
-\newline
+\\
 
 An asymmetric relation has no pair $ \langle a, b \rangle $ that can be written as $ \langle b, a \rangle $, therefore there is no pair for which antisymmetry can be tested. Therefore it can be said that every asymmetric relation is also antisymmetrical.
-\newline
+\\
 
 \textit{2. Laat zien dat het omgekeerde niet geldt. U kunt dit laten zien door een voorbeeld te geven van een anti-symmetrische relatie die niet asymmetrisch is.}
-\newline
+\\
 
 Assuming there is an antisymmetrical pair, this pair can be written in reverse order, therefore the relation is not asymmetrical.
 
 
 \section*{Opgave 2.23}
 \textit{Laat zien dat elke strikte partiele orde bevat is in een partiele orde.}
-\newline
+\\
 
 A partitial order in comparison with a strict partitial order, has extra pairs for reflexivity and antisymmetry. The strict partitial order, compared with a partitial order lacks these pairs because it is irreflexive instead of reflexive, and assymetric instead of antisymmetric. All the pairs that are made because a strict partitial order is transitive, are also contained in a partitial order, because it is also transitive.
 
 
 \section*{Opgave 2.32}
-\textit{N is de verzameling van natuurlijke getallen (de verzameling \{0,1,2,3,...\}, en $ f : N \rightarrow N $ is de functie ‘met 2 vermenigvuldigen’ (dat wil zeggen f(0) = 0, f(1) = 2, f(2) = 4, enzovoorts). Is f surjectief? Injectief? Bijectief?}
-\newline
+\textit{N is de verzameling van natuurlijke getallen (de verzameling \{0,1,2,3,...\}, en $ f : N \rightarrow N $ is de functie ‘met 2 vermenigvuldigen’ (dat wil zeggen f(0) = 0, f(1) = 2, f(2) = 4, enzovoorts). Is f surjectief? Injectief? Bijectief?} \\
 
+$ x \neq y $
+\\
 $ f(x) = 2x $
+\\
+$ f(y) = 2y $
+\\
+$ 2x \neq 2y $
+\\
 
 This implies that every x has one and only one result.
+\\
 
-Furthermore, $ f(x) = 2x + 1$ maps to values that are never reached by $ f(x) = 2x $. This implies that the function is injective.
+By counterexample, $ f(x) = 2x + 1$ maps to values that are never reached by $ f(x) = 2x $. This implies that the function is injective because each input maps to each output exactly once or zero times. This also implies that the relation is not surjective, because there are outputs that are not reached.
 
-
+Therefore the relation is deemed not bijective, because the relation is not surjective.
 
 \section*{Opgave 3.23}
+\textit{Hoeveel elementen telt een representant van de equivalentieklasse
+$[\mathcal{P}(\{\emptyset\})]=_1  $ ?} \\
 
 \section*{Verzamelingenleer 6}
+\textit{} \\
 
 \section*{Verzamelingenleer 7}
+\textit{} \\
 
 % \section*{Opgave 2.17}
 % \textit{Teken een plaatje van een relatie die noch reﬂexief, noch irreﬂexief is.}
-% \newline
+% \\
 
 % \begin{figure}[ht!]
 % \centering
@@ -164,33 +175,3 @@ Furthermore, $ f(x) = 2x + 1$ maps to values that are never reached by $ f(x) = 
 %%%%%%%%%%%%%%%%%%%%
 
 \end{document}
-
-Na de afsluiting van de 'document' omgeving wordt alles in je broncode genegeerd. Zoals je ziet hebben we geen procent teken meer nodig om te voorkomen dat deze tekst geïnterpreteerd wordt door de compiler. Dit maakt het een handige plek om codefragmenten te zetten die je vaak nodig hebt (om te copy-pasten). Als volgt wat voorbeelden.
-
-% Lijst
-
-\begin{enumerate}
-\item
-\end{enumerate}
-
-% Waarheidstabel
-
-\begin{tabular}{c|c}
- &  \\
- &
-\end{tabular}
-
-% Semantisch tableau
-
-% \vspace{0.5cm}
-% \hspace{6.5cm}
-\begin{center}
-\begin{tikzpicture}[
- sibling distance=2cm
-]
-\Tree
-[.\ccen{}{}
-[.\ccen{}{}
-] ]
-\end{tikzpicture}
-\end{center}
