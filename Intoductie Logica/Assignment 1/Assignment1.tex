@@ -159,11 +159,19 @@ $[\mathcal{P}(\{\emptyset\})]=_1  $ ?} \\
 \begin{enumerate}
 \item "Er zijn mensen die een kat verzorgen."
 \\
-$ \{m \in M, k \in K : \langle m, k \rangle \in V \} \neq \emptyset $
+$ \{b \in M, k \in K : \langle b, k \rangle \in V \} \neq \emptyset $
+\\
+Uitspraak
 \item "Sommige katten hebben geen baasje."
 \\
 $ \{x \in \emptyset, k \in K : \langle x, k \rangle \in B \} \neq \emptyset $
+\\
+Uitspraak
 \item "Sommige mensen verzorgen de kat die ze bezitten."
+\\
+$ \{m \in M, k \in K : \langle m, k \rangle \in (V \cap B) \} \neq \emptyset $
+\\
+Uitspraak
 \end{enumerate}
 
 \section*{Verzamelingenleer 7}
@@ -171,9 +179,26 @@ $ \{x \in \emptyset, k \in K : \langle x, k \rangle \in B \} \neq \emptyset $
 
 \begin{enumerate}
 \item De patienten van Michielsen..
+\\
+$ \{x : \langle x, m \rangle \in P \} $
+\\
+Verzameling
 \item Alle patienten van Stevens zijn tevens patient van Teunissen.
+\\
+$ \{x : \langle x, s \rangle \} \subseteq \{x : \langle x, t \rangle \in P \} $
+\\
+Uitspraak
 \item Roelofse en Stevens hebben geen patient gemeen.
+\\
+$ \{x : \langle x, r \rangle \in P \} \cap \{x : \langle x, s \rangle \in P \} = \emptyset $
+\\
+Uitspraak
 \item De relatie binnen K x K van personen die Karelse als huisarts hebben.
+\\
+$ K^2 = \{ \langle a, b \rangle \mid \langle a, k \rangle \in P $
+  and $ \langle b, k \rangle \in P \}$
+\\
+Relatie
 \end{enumerate}
 
 \end{document}
