@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%
+%% Preambule  %%
+%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{upgreek}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{scrextend}
+
+\usepackage[all]{xy}
+\usepackage{tikz-qtree}
+\usepackage[margin=2.5cm]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+
+\lhead{\opdrachtNaam\ \opdrachtNummer}
+\rhead{\naam(\studentNummer)}
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}}
+\lfoot{\datum}
+\cfoot{}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\newcommand{\E}{\exists}
+\newcommand{\A}{\forall}
+
+
+\newcommand{\ccen}[2]{\llap{$#1$}${}\mathrel{\circ}{}$\rlap{$#2$}}
+
+
+%%%%%%%%%%%%%%
+%% Gegevens %%
+%%%%%%%%%%%%%%
+
+% Vul hier je gegevens in.
+
+\newcommand{\naam}          {Stefan Schenk}
+\newcommand{\studentNummer} {11881798}
+\newcommand{\opdrachtNaam}  {Assignment}
+\newcommand{\opdrachtNummer}{1}
+\newcommand{\datum}         {November 2017}
+
+
+%%%%%%%%%%%%%%%%
+%% Antwoorden %%
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%
+%% Question 1 %%
+%%%%%%%%%%%%%%%%
+
+\section*{Question 1}
+
+\begin{enumerate}[label=(\alph*)]
+
+  % Produce clear images for the surface plots for both Model CT and Model D, and provide screenshots for the input membership functions as well as the output membership functions. State your answers clearly for each model, separately. (5 points)
+  \item one
+
+  % Modify the rule bases for both Model CT and Model D by reducing as much rules as possible, without changing the behaviour of the system too much. How would you explain the behaviour change while logically maintaining the rule base? If this is possible, give an example of your reasoning. Report the new rule bases, separately, and justify your decisions by brieﬂy describing your motivation. (10 points)
+  \item two
+
+  % What kind of inference system did you implement for Model CT? Explain your answer by giving reason. (5 points)
+  \item three
+
+  % Try decreasing and increasing the overlap between both the input and output fuzzy sets for Model D. How does this inﬂuence the behaviour of the system? Explain brieﬂy. (5 points)
+  \item four
+
+  % Change the settings according to the following parameters one at a time. How does this inﬂuence the behaviour of the system? Explain the meaning of the setting and describe your observations brieﬂy. After each change, go back to the default settings. (6 points)
+  \item five
+
+  % Change the input membership functions to be Gaussian rather than triangular for both inputs of Model CT. How does this inﬂuence the behaviour of the system? Explain brieﬂy. (4 points)
+  \item six
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%
+%% Question 2 %%
+%%%%%%%%%%%%%%%%
+
+\section*{Question 2}
+
+\begin{enumerate}[label=(\alph*)]
+
+  % Show the input and output membership functions and the surfaces of your ﬁnal (most preferred) system for the following 2 inputs - 1 output combinations: [Dirtiness, DirtType, CycleTime], [Load, Dirtiness, CycleTime] and [Load, DirtType, Detergent]. (12 points)
+  \item one
+
+  % How did you design the membership functions for the input variables? Why? (Consider the number of fuzzy sets, type of fuzzy sets, the support and the core of the fuzzy sets) (8 points)
+  \item two
+
+  % What are the rules you created? Describe your reasoning. (10 points)
+  \item three
+
+  % What are the settings for this system? Why do you prefer these settings? (Consider inference type, T/S-norm, aggregation, implication and defuzziﬁcation) (10 points)
+  \item four
+
+  % By analyzing the surfaces in 2(a), discuss whether you have designed a washing machine that can solve the customers’ complaints. (15 points)
+  \item five
+
+  % How can you further improve your design and why? (10 points)
+  \item six
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%% Einde document %%
+%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
