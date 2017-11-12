@@ -65,10 +65,10 @@
 
 \begin{enumerate}[label=(\alph*)]
 
-  \item Produce clear images for the surface plots for both Model CT and Model
-  D, and provide screenshots for the input membership functions as well as the
-  output membership functions. State your answers clearly for each model,
-  separately.
+  \item \textit{Produce clear images for the surface plots for both Model CT
+  and Model D, and provide screenshots for the input membership functions as
+  well as the output membership functions. State your answers clearly for each
+  model, separately.}
 
   \begin{figure}[ht!]
   \centering
@@ -136,12 +136,12 @@
 
   \pagebreak
 
-  \item Modify the rule bases for both Model CT and Model D by reducing as much
-  rules as possible, without changing the behaviour of the system too much. How
-  would you explain the behaviour change while logically maintaining the rule
-  base? If this is possible, give an example of your reasoning. Report the new
-  rule bases, separately, and justify your decisions by briefly describing your
-  motivation.
+  \item \textit{Modify the rule bases for both Model CT and Model D by reducing
+  as much rules as possible, without changing the behaviour of the system too
+  much. How would you explain the behaviour change while logically maintaining
+  the rule base? If this is possible, give an example of your reasoning. Report
+  the new rule bases, separately, and justify your decisions by briefly
+  describing your motivation.}
 
   By ticking the not box, it is possible to avoid make rules seperately for each
   non-changing variable, reducing the number of rules from 9 to 6 for ModelD,
@@ -240,16 +240,14 @@
     Long) (1)
   \end{enumerate}
 
-  \item What kind of inference system did you implement for Model CT? Explain
-  your answer by giving reason.
+  \item \textit{What kind of inference system did you implement for Model CT?
+  Explain your answer by giving reason.}
 
   A Mamdani-type rule based inference system. The consequents are represented
   as fuzzy sets, the aggregation is performed on output fuzzy sets by taking the
   union.
 
-  \item Try decreasing and increasing the overlap between both the input and
-  output fuzzy sets for Model D. How does this influence the behaviour of the
-  system? Explain briefly.
+  \item \textit{Try decreasing and increasing the overlap between both the input and output fuzzy sets for Model D. How does this influence the behaviour of the system? Explain briefly.}
 
   Increasing overlap makes the surface of the modal look more flat. Decreasing
   overlap decreases the complexity of the surface.
@@ -272,10 +270,10 @@
 
   \pagebreak
 
-  \item Change the settings according to the following parameters one at a
-  time. How does this influence the behaviour of the system? Explain the meaning
-  of the setting and describe your observations briefly. After each change, go
-  back to the default settings.
+  \item \textit{Change the settings according to the following parameters one
+  at a time. How does this influence the behaviour of the system? Explain the
+  meaning of the setting and describe your observations briefly. After each
+  change, go back to the default settings.}
 
   \begin{enumerate}[label=(\roman*)]
 
@@ -356,9 +354,9 @@
   \end{enumerate}
 
 
-  \item Change the input membership functions to be Gaussian rather than
+  \item \textit{Change the input membership functions to be Gaussian rather than
   triangular for both inputs of Model CT. How does this influence the behaviour
-  of the system? Explain briefly.
+  of the system? Explain briefly.}
 
   The membership level of an input variable that lies further away from the
   linguistic term is decreasing slowly at first, but the further it moves away,
@@ -387,21 +385,155 @@
 %% Question 2 %%
 %%%%%%%%%%%%%%%%
 
+\pagebreak
+
 \section*{Question 2}
+
+So, my manager realised that none of the models (D and CT) are good fit to solve
+the customers' complaints. Implying that all the complaints are still unsolved.
+It can be assumed that the complaints are still in effect because the
+two systems aren't used simultaniously. So either the long cycle time is
+resolved, or the amount of detergent is resolved.
+
+This implies that merging the two models into FoFL would already solve the
+majority of the problems. Therefore, merging the two models, D and CT into a
+hierarchical FLS would solve the problems with minimal effort. Instead we
+design a totally new system FoFL.
 
 \begin{enumerate}[label=(\alph*)]
 
-  \item Show the input and output membership functions and the surfaces of your ﬁnal (most preferred) system for the following 2 inputs - 1 output combinations: [Dirtiness, DirtType, CycleTime], [Load, Dirtiness, CycleTime] and [Load, DirtType, Detergent].
+  \item \textit{Show the input and output membership functions and the surfaces
+  of your ﬁnal (most preferred) system for the following 2 inputs - 1 output
+  combinations: [Dirtiness, DirtType, CycleTime], [Load, Dirtiness, CycleTime]
+  and [Load, DirtType, Detergent].}
 
-  \item How did you design the membership functions for the input variables? Why? (Consider the number of fuzzy sets, type of fuzzy sets, the support and the core of the fuzzy sets)
+  \begin{figure}[ht!]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{res/image3_dirtiness}
+    \caption{ModelFoFL - Dirtiness Input}
+    \label{fig:sub1}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{res/image3_dirttype}
+    \caption{ModelFoFL - DirtType Input}
+    \label{fig:sub2}
+  \end{subfigure}
+  \end{figure}
 
-  \item What are the rules you created? Describe your reasoning.
+  \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=.45\linewidth]{res/image3_load}
+    \caption{ModelFoFL - Load Input}
+    \label{fig:sub2}
+  \end{figure}
 
-  \item What are the settings for this system? Why do you prefer these settings? (Consider inference type, T/S-norm, aggregation, implication and defuzziﬁcation)
+  \begin{figure}[ht!]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{res/image3_detergent}
+    \caption{ModelFoFL - Detergent Output}
+    \label{fig:sub1}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{res/image3_cycletime}
+    \caption{ModelFoFL - CycleTime Output}
+    \label{fig:sub2}
+  \end{subfigure}
+  \end{figure}
 
-  \item By analyzing the surfaces in 2(a), discuss whether you have designed a washing machine that can solve the customers’ complaints.
+  \begin{figure}[ht!]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{res/image3_surface1}
+    \caption{$\langle TypeOfDirt, Dirtiness \rangle \longrightarrow CycleTime$}
+    \label{fig:sub1}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{res/image3_surface2}
+    \caption{$\langle TypeOfDirt, Load \rangle \longrightarrow
+      AmountOfDetergent$}
+    \label{fig:sub2}
+  \end{subfigure}
+  \end{figure}
+
+  \pagebreak
+
+  \item \textit{How did you design the membership functions for the input
+  variables? Why? (Consider the number of fuzzy sets, type of fuzzy sets, the
+  support and the core of the fuzzy sets)}
+
+  I've used gaussians for the fuzzy sets that had a big range, to try and
+  represent a more natural transition between fuzzy terms. For the load, I've
+  used a triangular type of MF, because the load is measured in pieces of
+  clothing, so the steps towards making a distinction between HalfFull or Full
+  would be considered more linear.
+
+  After playing around with the position of the MF's, adapting the support of
+  the triangulars and gaussians, I reverted them back to their default
+  positions because I lack the experience to tell if any improvement had been
+  made.
+
+  \pagebreak
+
+  \item \textit{What are the rules you created? Describe your reasoning.}
+
+  The CT model had an option to choose 'Extremely High' dirtiness,
+  which gives customers the option to reduce washing time, and reduce the amount
+  of detergent, lowering the cost for less dirtier clothes, and be assured that
+  their clothes are completely clean having dirtier clothes, although merging
+  more input options gives us more knowledge about the type of washing that
+  needs to be done, and outputs can be tweaked to compensate for the lack of an
+  'Extremely High' dirtiness option.
+
+  \begin{itemize}[noitemsep]
+  \item Dirtiness impacts CycleTime + Detergent
+  \item Dirt type impacts CycleTime
+  \item Load impacts Detergent
+  \end{itemize}
+
+  Taking the brute force way, I've created 27 rules 3*3*3 (Dirtiness * Load *
+  DirtType). I've used the tables from the existing designs:
+
+  \begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{res/rules_table}
+    \caption{Rules Table}
+  \end{figure}
+
+  The only times that Load impacts the cycle time, and DirtType impacts the
+  detergent, is when they are 'Full' and 'Greasy' respectively.
+
+  \item What are the settings for this system? Why do you prefer these settings
+  (Consider inference type, T/S-norm, aggregation, implication and
+  defuzziﬁcation)
+
+  I set all the settings to default, except for the defuzzification setting,
+  because they had no impact on the surface graph. I changed the
+  defuzzification setting to bisector, because it seemed to amplify the bumps
+  where the cycle time and detergent would be maxed out, which would normally
+  never be reached unless all the input values were exactly maxed out.
+
+  \item By analyzing the surfaces in 2(a), discuss whether you have designed a
+  washing machine that can solve the customers’ complaints.
+
+  I would say yes, but nothing is certain until it's been tested. The wait
+  times and detergent used are very low on average (of all the combinations of
+  problems), keeping the costs down. As the load or type of dirt gets bigger,
+  the amount of detergent increases, making sure that the dirt is tackled with
+  precisely enough detergent. As the type of dirt surpasses 'Muddy', and the
+  Dirtiness isn't very low, the CycleTime will be very high, to make absolutely
+  sure that the wash is clean.
 
   \item How can you further improve your design and why?
+
+  Tests could be run to see if the results are met. Also, the CycleTime increases in steps, which could be more like a gradient in my opinion.
 
 \end{enumerate}
 
