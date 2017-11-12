@@ -43,8 +43,6 @@
 %% Gegevens %%
 %%%%%%%%%%%%%%
 
-% Vul hier je gegevens in.
-
 \newcommand{\naam}          {Stefan Schenk}
 \newcommand{\studentNummer} {11881798}
 \newcommand{\opdrachtNaam}  {Assignment}
@@ -142,74 +140,119 @@
   rules as possible, without changing the behaviour of the system too much. How
   would you explain the behaviour change while logically maintaining the rule
   base? If this is possible, give an example of your reasoning. Report the new
-  rule bases, separately, and justify your decisions by brieﬂy describing your
+  rule bases, separately, and justify your decisions by briefly describing your
   motivation.
 
-  Using the not box, it is possible to avoid make rules seperately for each
-  non-changing variable, reducing the number of rules from 9 to 6 for ModelD, and from 12 to 10 for ModelCT.
+  By ticking the not box, it is possible to avoid make rules seperately for each
+  non-changing variable, reducing the number of rules from 9 to 6 for ModelD,
+  and from 12 to 10 for ModelCT.
 
   \subsection*{ModelD}
 
   Before:
   \begin{enumerate}[label=(\arabic*)]
-  \item If (Dirtyness is Low) and (Load is AlmostEmpty) then (Detergent is Less) (1)
-  \item If (Dirtyness is Medium) and (Load is AlmostEmpty) then (Detergent is Less) (1)
-  \item If (Dirtyness is High) and (Load is AlmostEmpty) then (Detergent is Medium) (1)
-  \item If (Dirtyness is Low) and (Load is HalfFull) then (Detergent is Less) (1)
-  \item If (Dirtyness is Medium) and (Load is HalfFull) then (Detergent is Medium) (1)
-  \item If (Dirtyness is High) and (Load is HalfFull) then (Detergent is Medium) (1)
-  \item If (Dirtyness is Low) and (Load is Full) then (Detergent is Medium) (1)
-  \item If (Dirtyness is Medium) and (Load is Full) then (Detergent is More) (1)
-  \item If (Dirtyness is High) and (Load is Full) then (Detergent is More) (1)
+    \item If (Dirtyness is Low) and (Load is AlmostEmpty) then (Detergent is
+    Less) (1)
+    \item If (Dirtyness is Medium) and (Load is AlmostEmpty) then (Detergent is
+    Less) (1)
+    \item If (Dirtyness is High) and (Load is AlmostEmpty) then (Detergent is
+    Medium) (1)
+    \item If (Dirtyness is Low) and (Load is HalfFull) then (Detergent is Less)
+    (1)
+    \item If (Dirtyness is Medium) and (Load is HalfFull) then (Detergent is
+    Medium) (1)
+    \item If (Dirtyness is High) and (Load is HalfFull) then (Detergent is
+    Medium) (1)
+    \item If (Dirtyness is Low) and (Load is Full) then (Detergent is Medium)
+    (1)
+    \item If (Dirtyness is Medium) and (Load is Full) then (Detergent is More)
+    (1)
+    \item If (Dirtyness is High) and (Load is Full) then (Detergent is More) (1)
   \end{enumerate}
 
   After:
   \begin{enumerate}[label=(\arabic*)]
-  \item If (Dirtyness is not High) and (Load is AlmostEmpty) then (Detergent is Less) (1)
-  \item If (Dirtyness is High) and (Load is AlmostEmpty) then (Detergent is Medium) (1)
-  \item If (Dirtyness is Low) and (Load is HalfFull) then (Detergent is Less) (1)\item If (Dirtyness is not Low) and (Load is HalfFull) then (Detergent is Medium) (1)
-  \item If (Dirtyness is Low) and (Load is Full) then (Detergent is Medium) (1)
-  \item If (Dirtyness is not Low) and (Load is Full) then (Detergent is More) (1)
+    \item If (Dirtyness is not High) and (Load is AlmostEmpty) then (Detergent
+    is Less) (1)
+    \item If (Dirtyness is High) and (Load is AlmostEmpty) then (Detergent is
+    Medium) (1)
+    \item If (Dirtyness is Low) and (Load is HalfFull) then (Detergent is Less)
+    (1)
+    \item If (Dirtyness is not Low) and (Load is HalfFull) then (Detergent
+    is Medium) (1)
+    \item If (Dirtyness is Low) and (Load is Full) then (Detergent is Medium)
+    (1)
+    \item If (Dirtyness is not Low) and (Load is Full) then (Detergent is More)
+    (1)
   \end{enumerate}
 
   \subsection*{ModelCT}
 
   Before:
   \begin{enumerate}[label=(\arabic*)]
-  \item If (Dirtyness is Low) and (DirtType is Sweaty) then (CycleTime is Short) (1)
-  \item If (Dirtyness is Medium) and (DirtType is Sweaty) then (CycleTime is Short) (1)
-  \item If (Dirtyness is High) and (DirtType is Sweaty) then (CycleTime is Medium) (1)
-  \item If (Dirtyness is ExtremelyHigh) and (DirtType is Sweaty) then (CycleTime is Medium) (1)
-  \item If (Dirtyness is Low) and (DirtType is Muddy) then (CycleTime is Short) (1)
-  \item If (Dirtyness is Medium) and (DirtType is Muddy) then (CycleTime is Medium) (1)
-  \item If (Dirtyness is High) and (DirtType is Muddy) then (CycleTime is Medium) (1)
-  \item If (Dirtyness is ExtremelyHigh) and (DirtType is Muddy) then (CycleTime is Long) (1)
-  \item If (Dirtyness is Low) and (DirtType is Greasy) then (CycleTime is Medium) (1)
-  \item If (Dirtyness is Medium) and (DirtType is Greasy) then (CycleTime is Long) (1)
-  \item If (Dirtyness is High) and (DirtType is Greasy) then (CycleTime is Long) (1)
-  \item If (Dirtyness is ExtremelyHigh) and (DirtType is Greasy) then (CycleTime is Long) (1)
+    \item If (Dirtyness is Low) and (DirtType is Sweaty) then (CycleTime is
+    Short) (1)
+    \item If (Dirtyness is Medium) and (DirtType is Sweaty) then (CycleTime is
+    Short) (1)
+    \item If (Dirtyness is High) and (DirtType is Sweaty) then (CycleTime is
+    Medium) (1)
+    \item If (Dirtyness is ExtremelyHigh) and (DirtType is Sweaty) then
+    (CycleTime is Medium) (1)
+    \item If (Dirtyness is Low) and (DirtType is Muddy) then (CycleTime is
+    Short) (1)
+    \item If (Dirtyness is Medium) and (DirtType is Muddy) then (CycleTime is
+    Medium) (1)
+    \item If (Dirtyness is High) and (DirtType is Muddy) then (CycleTime is
+    Medium) (1)
+    \item If (Dirtyness is ExtremelyHigh) and (DirtType is Muddy) then
+    (CycleTime is Long) (1)
+    \item If (Dirtyness is Low) and (DirtType is Greasy) then (CycleTime is
+    Medium) (1)
+    \item If (Dirtyness is Medium) and (DirtType is Greasy) then (CycleTime is
+    Long) (1)
+    \item If (Dirtyness is High) and (DirtType is Greasy) then (CycleTime is
+    Long) (1)
+    \item If (Dirtyness is ExtremelyHigh) and (DirtType is Greasy) then
+    (CycleTime is Long) (1)
   \end{enumerate}
 
   After:
   \begin{enumerate}[label=(\arabic*)]
-  \item If (Dirtyness is Low) and (DirtType is Sweaty) then (CycleTime is Short) (1)
-  \item If (Dirtyness is Medium) and (DirtType is Sweaty) then (CycleTime is Short) (1)
-  \item If (Dirtyness is High) and (DirtType is Sweaty) then (CycleTime is Medium) (1)
-  \item If (Dirtyness is ExtremelyHigh) and (DirtType is Sweaty) then (CycleTime is Medium) (1)
-  \item If (Dirtyness is Low) and (DirtType is Muddy) then (CycleTime is Short) (1)\item If (Dirtyness is Medium) and (DirtType is Muddy) then (CycleTime is Medium) (1)
-  \item If (Dirtyness is High) and (DirtType is Muddy) then (CycleTime is Medium) (1)
-  \item If (Dirtyness is ExtremelyHigh) and (DirtType is Muddy) then (CycleTime is Long) (1)
-  \item If (Dirtyness is Low) and (DirtType is Greasy) then (CycleTime is Medium) (1)
-  \item If (Dirtyness is not Low) and (DirtType is Greasy) then (CycleTime is Long) (1)
+    \item If (Dirtyness is Low) and (DirtType is Sweaty) then (CycleTime is
+    Short) (1)
+    \item If (Dirtyness is Medium) and (DirtType is Sweaty) then (CycleTime is
+    Short) (1)
+    \item If (Dirtyness is High) and (DirtType is Sweaty) then (CycleTime is
+    Medium) (1)
+    \item If (Dirtyness is ExtremelyHigh) and (DirtType is Sweaty) then
+    (CycleTime is Medium) (1)
+    \item If (Dirtyness is Low) and (DirtType is Muddy) then (CycleTime is
+    Short) (1)
+    \item If (Dirtyness is Medium) and (DirtType is Muddy) then
+    (CycleTime is Medium) (1)
+    \item If (Dirtyness is High) and (DirtType is Muddy) then (CycleTime is
+    Medium) (1)
+    \item If (Dirtyness is ExtremelyHigh) and (DirtType is Muddy) then
+    (CycleTime is Long) (1)
+    \item If (Dirtyness is Low) and (DirtType is Greasy) then (CycleTime is
+    Medium) (1)
+    \item If (Dirtyness is not Low) and (DirtType is Greasy) then (CycleTime is
+    Long) (1)
   \end{enumerate}
 
-  \item What kind of inference system did you implement for Model CT? Explain your answer by giving reason.
+  \item What kind of inference system did you implement for Model CT? Explain
+  your answer by giving reason.
 
-  Rule based inference.
+  A Mamdani-type rule based inference system. The consequents are represented
+  as fuzzy sets, the aggregation is performed on output fuzzy sets by taking the
+  union.
 
-  \item Try decreasing and increasing the overlap between both the input and output fuzzy sets for Model D. How does this inﬂuence the behaviour of the system? Explain brieﬂy.
+  \item Try decreasing and increasing the overlap between both the input and
+  output fuzzy sets for Model D. How does this influence the behaviour of the
+  system? Explain briefly.
 
-  Increasing overlap makes the surface of the modal look more flat. Decreasing overlap decreases the complexity of the surface.
+  Increasing overlap makes the surface of the modal look more flat. Decreasing
+  overlap decreases the complexity of the surface.
 
   \begin{figure}[ht!]
   \centering
@@ -225,13 +268,117 @@
     \caption{ModelD - Decreased Overlap}
     \label{fig:sub2}
   \end{subfigure}
+\end{figure}
+
+  \pagebreak
+
+  \item Change the settings according to the following parameters one at a
+  time. How does this influence the behaviour of the system? Explain the meaning
+  of the setting and describe your observations briefly. After each change, go
+  back to the default settings.
+
+  \begin{enumerate}[label=(\roman*)]
+
+    \item Aggregation = sum:
+
+    \begin{figure}[ht!]
+    \centering
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\linewidth]{res/modelD_aggregation}
+      \caption{ModelD - Aggregation = sum}
+      \label{fig:sub1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\linewidth]{res/image2}
+      \caption{ModelD - Original}
+      \label{fig:sub2}
+    \end{subfigure}
+    \end{figure}
+
+    \item Defuzziﬁcation = bisector:
+
+    \begin{figure}[ht!]
+    \centering
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\linewidth]{res/modelD_bisector}
+      \caption{ModelD - Defuzziﬁcation = bisector}
+      \label{fig:sub1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\linewidth]{res/image2}
+      \caption{ModelD - Original}
+      \label{fig:sub2}
+    \end{subfigure}
+    \end{figure}
+
+    \item Defuzziﬁcation = SoM:
+
+    \begin{figure}[ht!]
+    \centering
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\linewidth]{res/modelD_som}
+      \caption{ModelD - Defuzziﬁcation = som}
+      \label{fig:sub1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\linewidth]{res/image2}
+      \caption{ModelD - Original}
+      \label{fig:sub2}
+    \end{subfigure}
+    \end{figure}
+
+    \pagebreak
+
+    \item T-norm = prod:
+
+    \begin{figure}[ht!]
+    \centering
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\linewidth]{res/modelD_t-norm}
+      \caption{ModelD - T-norm = prod}
+      \label{fig:sub1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\linewidth]{res/image2}
+      \caption{ModelD - Original}
+      \label{fig:sub2}
+    \end{subfigure}
+    \end{figure}
+
+  \end{enumerate}
+
+
+  \item Change the input membership functions to be Gaussian rather than
+  triangular for both inputs of Model CT. How does this influence the behaviour
+  of the system? Explain briefly.
+
+  The membership level of an input variable that lies further away from the
+  linguistic term is decreasing slowly at first, but the further it moves away,
+  the faster it decreases, opposed to the immediate linear drop of membership.
+
+  \begin{figure}[ht!]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{res/modelD_gaussian}
+    \caption{ModelD - MF = gaussian}
+    \label{fig:sub1}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{res/image2}
+    \caption{ModelD - Original}
+    \label{fig:sub2}
+  \end{subfigure}
   \end{figure}
-
-  % Change the settings according to the following parameters one at a time. How does this inﬂuence the behaviour of the system? Explain the meaning of the setting and describe your observations brieﬂy. After each change, go back to the default settings.
-  \item five
-
-  % Change the input membership functions to be Gaussian rather than triangular for both inputs of Model CT. How does this inﬂuence the behaviour of the system? Explain brieﬂy.
-  \item six
 
 \end{enumerate}
 
@@ -244,23 +391,17 @@
 
 \begin{enumerate}[label=(\alph*)]
 
-  % Show the input and output membership functions and the surfaces of your ﬁnal (most preferred) system for the following 2 inputs - 1 output combinations: [Dirtiness, DirtType, CycleTime], [Load, Dirtiness, CycleTime] and [Load, DirtType, Detergent].
-  \item one
+  \item Show the input and output membership functions and the surfaces of your ﬁnal (most preferred) system for the following 2 inputs - 1 output combinations: [Dirtiness, DirtType, CycleTime], [Load, Dirtiness, CycleTime] and [Load, DirtType, Detergent].
 
-  % How did you design the membership functions for the input variables? Why? (Consider the number of fuzzy sets, type of fuzzy sets, the support and the core of the fuzzy sets)
-  \item two
+  \item How did you design the membership functions for the input variables? Why? (Consider the number of fuzzy sets, type of fuzzy sets, the support and the core of the fuzzy sets)
 
-  % What are the rules you created? Describe your reasoning.
-  \item three
+  \item What are the rules you created? Describe your reasoning.
 
-  % What are the settings for this system? Why do you prefer these settings? (Consider inference type, T/S-norm, aggregation, implication and defuzziﬁcation)
-  \item four
+  \item What are the settings for this system? Why do you prefer these settings? (Consider inference type, T/S-norm, aggregation, implication and defuzziﬁcation)
 
-  % By analyzing the surfaces in 2(a), discuss whether you have designed a washing machine that can solve the customers’ complaints.
-  \item five
+  \item By analyzing the surfaces in 2(a), discuss whether you have designed a washing machine that can solve the customers’ complaints.
 
-  % How can you further improve your design and why?
-  \item six
+  \item How can you further improve your design and why?
 
 \end{enumerate}
 
