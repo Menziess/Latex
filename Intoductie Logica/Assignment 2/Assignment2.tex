@@ -7,15 +7,17 @@
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{upgreek}
 \usepackage{enumerate}
+\usepackage{enumitem}   %
 \usepackage{multicol}
 \usepackage{scrextend}
-
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{subcaption} % 2 column images
 \usepackage[all]{xy}
 \usepackage{tikz-qtree}
 \usepackage[margin=2.5cm]{geometry}
 
-\usepackage{fancyhdr}
-\usepackage{lastpage}
+
 \setlength{\parindent}{0pt}
 
 \pagestyle{fancy}
@@ -38,8 +40,6 @@
 %% Gegevens %%
 %%%%%%%%%%%%%%
 
-% Vul hier je gegevens in.
-
 \newcommand{\naam}          {Stefan Schenk}
 \newcommand{\studentNummer} {11881798}
 \newcommand{\opdrachtNaam}  {Assignment}
@@ -52,19 +52,54 @@
 
 \begin{document}
 
-Opgaven:
+% Opgaven:
+%
+% Opdrachten 4.2, 5.12, 5.23 van (1) tot (4), 5.26, 5.28,
+% 5.49 (voor $ { \leftrightarrow, \neg } $ ), 5.52, \\
+% Opdrachten 8 en 11 van het stuk “Inductiebewijzen”.
 
-Opdrachten 4.2, 5.12, 5.23 van (1) tot (4), 5.26, 5.28,
-5.49 (voor $ { \leftrightarrow, \neg } $ ), 5.52, \\
-Opdrachten 8 en 11 van het stuk “Inductiebewijzen”.
+\subsection*{Opgave 4.2}
 
-\section*{Opgave 2.7}
-\textit{Bewijs de idempotentie, commutativiteit en associativiteit van
-$ \cap $.}
-\\
+Als het niet waait dan is het half 3.
+
+\underline{Het is half 3.\quad}
+
+Het waait niet.
+
+
+\subsection*{Opgave 5.12}
+
+\begin{tikzpicture}
+\Tree [.($\neg$p$\rightarrow$($\neg$q$\wedge$r)) [.$\neg$p [.p ] ]
+  [.($\neg$q$\wedge$r) [.$\neg$q q ]
+  [.r ]]]
+\end{tikzpicture}
+
+
+\subsection*{Opgave 5.23}
+
+\begin{tabular}{cc|c}
+a & b & F \\
+\hline
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+1 & 1 & 1 \\
+\end{tabular}
+
+\subsection*{Opgave 5.26}
+\subsection*{Opgave 5.28}
+\subsection*{Opgave 5.49}
+\subsection*{Opgave 5.52}
+\subsection*{Inductiebewijzen 8}
+\subsection*{Inductiebewijzen 8}
+
 
 %%%%%%%%%%%%%%%%%%%%
 %% Einde document %%
 %%%%%%%%%%%%%%%%%%%%
 
 \end{document}
+
+
+
