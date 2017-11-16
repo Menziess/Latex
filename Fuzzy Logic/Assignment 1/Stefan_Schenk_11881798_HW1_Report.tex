@@ -145,7 +145,7 @@
 
   By ticking the not box, it is possible to avoid make rules seperately for each
   non-changing variable, reducing the number of rules from 9 to 6 for ModelD,
-  and from 12 to 10 for ModelCT.
+  and from 12 to 10 for ModelCT. In my model there was no noticable change.
 
   \subsection*{ModelD}
 
@@ -266,9 +266,7 @@
     \caption{ModelD - Decreased Overlap}
     \label{fig:sub2}
   \end{subfigure}
-\end{figure}
-
-  \pagebreak
+  \end{figure}
 
   \item \textit{Change the settings according to the following parameters one
   at a time. How does this influence the behaviour of the system? Explain the
@@ -295,6 +293,16 @@
     \end{subfigure}
     \end{figure}
 
+    Aggregation is the process by which the fuzzy sets that represent the
+    outputs of each rule are combined into a single fuzzy set. Aggregation only
+    occurs once for each output variable, just prior to the fifth and final
+    step, defuzzification. The input of the aggregation process is the list of
+    truncated output functions returned by the implication process for each
+    rule. The output of the aggregation process is one fuzzy set for each
+    output variable.
+
+    The sum option simply sums the outputs of each rule.
+
     \item Defuzziﬁcation = bisector:
 
     \begin{figure}[ht!]
@@ -313,6 +321,11 @@
     \end{subfigure}
     \end{figure}
 
+    The bisector is a method that finds a value between the centroid and the
+    mean of the result of the aggregation.
+
+    The model seems to have changed a little bit, the edges are smoothened.
+
     \item Defuzziﬁcation = SoM:
 
     \begin{figure}[ht!]
@@ -330,6 +343,12 @@
       \label{fig:sub2}
     \end{subfigure}
     \end{figure}
+
+    Smallest of Maximum finds the smalles value of the maximum values of the
+    result of the aggregation.
+
+    It seems to have changed the model quite a bit. There are huge jumps
+    between the different output values.
 
     \pagebreak
 
@@ -351,8 +370,12 @@
     \end{subfigure}
     \end{figure}
 
-  \end{enumerate}
+    T-norms are binary operators that generalize intersection and union
+    operations, respectively.
 
+    The changes are miniscule.
+
+  \end{enumerate}
 
   \item \textit{Change the input membership functions to be Gaussian rather than
   triangular for both inputs of Model CT. How does this influence the behaviour
@@ -384,8 +407,6 @@
 %%%%%%%%%%%%%%%%
 %% Question 2 %%
 %%%%%%%%%%%%%%%%
-
-\pagebreak
 
 \section*{Question 2}
 
@@ -478,9 +499,8 @@ design a totally new system FoFL.
   After playing around with the position of the MF's, adapting the support of
   the triangulars and gaussians, I reverted them back to their default
   positions because I lack the experience to tell if any improvement had been
-  made.
-
-  \pagebreak
+  made. The core of each function is either the mean, the min or the max of the
+  in- and output sets, and only has one datapoint where $\mu_F(x)=1$.
 
   \item \textit{What are the rules you created? Describe your reasoning.}
 
