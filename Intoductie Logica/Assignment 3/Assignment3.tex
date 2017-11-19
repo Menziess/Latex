@@ -16,7 +16,7 @@
 \usepackage[all]{xy}
 \usepackage{tikz-qtree}
 \usepackage[margin=2.5cm]{geometry}
-
+\input{../../Template/fitch.sty}
 
 \setlength{\parindent}{0pt}
 
@@ -54,299 +54,93 @@
 
 % Opgaven:
 %
-% Opdrachten 4.2, 5.12, 5.23 van (1) tot (4), 5.26, 5.28,
-% 5.49 (voor $ { \leftrightarrow, \neg } $ ), 5.52, \\
-% Opdrachten 8 en 11 van het stuk “Inductiebewijzen”.
-
-\subsection*{Opgave 4.2}
-
-Als het niet waait dan is het half 3.
-
-\underline{Het is half 3.\quad}
-
-Het waait niet.
-
-
-\subsection*{Opgave 5.12}
-
-\begin{tikzpicture}
-\Tree [.($\neg$p$\rightarrow$($\neg$q$\wedge$r)) [.$\neg$p [.p ] ]
-  [.($\neg$q$\wedge$r) [.$\neg$q q ]
-  [.r ]]]
-\end{tikzpicture}
-
-Het bereik van de negatietekens zijn respectievelijk p en de ander q.
-
-
-\subsection*{Opgave 5.23}
-
-\begin{enumerate}[label=(\arabic*)]
-
-  % 1
-  \item
-  \begin{tabular}{c|c}
-  $\varphi$ & $\varphi \vee \varphi$ \\
-  \hline
-  0 & 1 \\
-  1 & 1 \\
-  \end{tabular} \\
-
-  Tautologie
-
-  % 2
-  \item
-  \begin{tabular}{cc|c|c}
-  $\varphi$ & $\psi$ & $(\varphi \wedge \psi)$
-    & $(\varphi \wedge \psi) \rightarrow \varphi$ \\
-  \hline
-  0 & 0 & 0 & 1\\
-  0 & 1 & 0 & 1\\
-  1 & 0 & 0 & 1\\
-  1 & 1 & 1 & 1\\
-  \end{tabular} \\
-
-  Tautologie
-
-  % 3
-  \item
-  \begin{tabular}{cc|c|c}
-  $\varphi$ & $\psi$ & $(\varphi \vee \psi)$
-    & $\varphi \rightarrow (\varphi \vee \psi)$ \\
-  \hline
-  0 & 0 & 0 & 1\\
-  0 & 1 & 1 & 1\\
-  1 & 0 & 1 & 1\\
-  1 & 1 & 1 & 1\\
-  \end{tabular} \\
-
-  Tautologie
-
-  % 4
-  \item
-  \begin{tabular}{cc|cc|c}
-  $\varphi$ & $\psi$ & $\neg \varphi$ & $(\varphi \rightarrow \psi)$
-    & $\neg \varphi \rightarrow (\varphi \rightarrow \psi)$ \\
-  \hline
-  0 & 0 & 1 & 1 & 1\\
-  0 & 1 & 1 & 1 & 1\\
-  1 & 0 & 0 & 0 & 1\\
-  1 & 1 & 0 & 1 & 1\\
-  \end{tabular} \\
-
-  Tautologie
-
-  % 5
-  \item
-  \begin{tabular}{cc|c|c}
-  $\varphi$ & $\psi$ & $(\varphi \rightarrow \psi)$
-    & $((\varphi \rightarrow \psi) \rightarrow \varphi) \rightarrow \varphi$ \\
-  \hline
-  0 & 0 & 1 & 0\\
-  0 & 1 & 1 & 0\\
-  1 & 0 & 0 & 1\\
-  1 & 1 & 1 & 1\\
-  \end{tabular} \\
-
-  Geen Tautologie
-
-  % 6
-  \item
-  \begin{tabular}{ccc|ccc|c}
-  $\varphi$ & $\psi$ & $\chi$ &
-    $(\varphi \rightarrow \psi)$ &
-    $(\varphi \rightarrow \chi)$ &
-    $(\psi \rightarrow \chi)$ &
-    $(\varphi \rightarrow (\psi \rightarrow \chi))
-      \rightarrow
-      ((\varphi \rightarrow \psi) \rightarrow (\varphi \rightarrow \chi))$ \\
-  \hline
-  0 & 0 & 0 & 1 & 1 & 1 & 1\\
-  0 & 0 & 1 & 1 & 1 & 1 & 1\\
-  0 & 1 & 0 & 1 & 1 & 0 & 1\\
-  0 & 1 & 1 & 1 & 1 & 1 & 1\\
-  1 & 0 & 0 & 0 & 0 & 1 & 1\\
-  1 & 0 & 1 & 0 & 1 & 1 & 1\\
-  1 & 1 & 0 & 1 & 0 & 0 & 1\\
-  1 & 1 & 1 & 1 & 1 & 1 & 1\\
-  \end{tabular} \\
-
-  Tautologie
-
-\end{enumerate}
-
-
-\subsection*{Opgave 5.26}
-
-$p\wedge q$
-
-\subsection*{Opgave 5.28}
-
-\begin{tabular}{cc|cc|c}
-$\neg \varphi$ & $\neg \psi$ &
-  $(\varphi \rightarrow \psi)$ \\
-\hline
-1 & 1 & 1 \\
-1 & 0 & 1 \\
-0 & 1 & 0 \\
-0 & 0 & 1 \\
-\end{tabular}
-\\
-
-De bovenste regel laat zien dat Modes Tollens geldig is.
-
-\subsection*{Opgave 5.49}
-
-Functioneel volledigheid: $\{\wedge, \neg\}$
-
-\begin{tabular}{cc|c}
-p & q & $\neg (p \wedge \neg q)$ \\
-\hline
-1 & 1 & 1 \\
-0 & 1 & 1 \\
-1 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{tabular}
-\\
-
-Functioneel volledigheid: $\{\rightarrow, \neg\}$
-
-\begin{tabular}{cc|c}
-p & q & $(p \rightarrow p) \rightarrow q$ \\
-\hline
-1 & 1 & 1 \\
-0 & 1 & 1 \\
-1 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{tabular}
-\\
-
-Functioneel volledigheid: $\{\vee, \neg\}$
-
-\begin{tabular}{cc|c}
-p & q & $\neg (p \vee \neg q) \vee q$ \\
-\hline
-1 & 1 & 1 \\
-0 & 1 & 1 \\
-1 & 0 & 0 \\
-0 & 0 & 0 \\
-\end{tabular}
-\\
-
-\subsection*{Opgave 5.52}
-
-Connectieven $\{\wedge, \vee, \rightarrow, \leftrightarrow\}$ omschreven m.b.v.
-$\dagger$. \\
-
-\begin{tabular}{ccc|c|c|c|c}
-p & q & $\dagger$
-  & $(p \dagger p) \dagger (q \dagger q)$
-  & $(p \dagger q) \dagger (p \dagger q)$
-  & ?
-  & ? \\
-\hline
-1 & 1 & 0  & 1 & 1  & 1 & 1 \\
-0 & 1 & 0  & 0 & 1  & 1 & 0 \\
-1 & 0 & 0  & 0 & 1  & 0 & 0 \\
-0 & 0 & 1  & 0 & 0  & 1 & 1 \\
-\end{tabular}
-\\
-
-\bigskip
-
-Connectieven $\{\wedge, \vee, \rightarrow, \leftrightarrow\}$ omschreven m.b.v.
-$\mid$. \\
-
-\begin{tabular}{ccc|c|c|c|c}
-p & q & $\mid$
-  & $(p \mid q) \mid (p \mid q)$
-  & $(p \mid p) \mid (q \mid q)$
-  & ?
-  & ? \\
-\hline
-1 & 1 & 0  & 1 & 1  & 1 & 1 \\
-0 & 1 & 1  & 0 & 1  & 1 & 0 \\
-1 & 0 & 1  & 0 & 1  & 0 & 0 \\
-0 & 0 & 1  & 0 & 0  & 1 & 1 \\
-\end{tabular}
-\\
-
-\subsection*{Inductiebewijzen 8}
-Te bewijzen: iedere propositielogische formule waarin $\vee$ het enige
-connectief is, waar is, iff tenminste een van zijn atomaire zinnen die in de
-formule voorkomen waar is.
-
-\textbf{Base case:} Er is geen connectief.
-
-\textbf{I.H.:} Voor alle zinnen met minder compexiteit dan $\phi$ geldt de te
-bewijzen stelling.
-
-\textbf{I.S.:} - $\phi = \psi \vee \chi$. Volgens I.H. zijn $\psi$ en $\chi$
-waar, dus $\psi$ is waar of $\chi$ is waar, dus $\phi$ is waar.
-\hfill $\Box$
-
-\subsection*{Inductiebewijzen 9}
-Neem een taal zonder negatie en waarin geldt dat voor alle $p\in ATOM:V(p)=1$.
-\smallskip
-
-Te bewijzen: voor alle formules $\phi$ geldt dat $V(\phi)=1$.
-
-\textbf{Base case:} $\phi$ = p, $V(p)=1$.
-
-\textbf{IH:} Voor alle formules met minder compexiteit dan $\phi$ geldt de te
-bewijzen stelling.
-
-\textbf{I.S.:} \\
-- $\phi = \psi \vee \chi:$ Volgens I.H. is $V(\psi)=1$, dus ook $V(\psi \vee
-\chi)=1$.\\
-- $\phi = \psi \wedge \chi:$ Volgens I.H. is $V(\psi)=1=V(\chi)$, dus ook $V
-(\psi \wedge \chi)=1$.\\
-- $\phi = \psi \rightarrow \chi:$ Volgens I.H. is $V(\chi)=1$, dus ook $V(\psi
-\rightarrow \chi)=1$.
-\hfill $\Box$
-
-
-\pagebreak
-
-\subsection*{Inductiebewijzen 10}
-Te bewijzen: dat geldt voor alle formules uit de propositielogica, en alle
-valuaties $V$, ofwel $V(\phi)=1$, ofwel $V(\phi)=0$, maar nooit $V(\phi)=1$ en
-$V(\phi)=0$.
-
-\textbf{Base case:} $\phi$ = p, $V(p)=1$ of $V(p)=0$, geldt voor een enkele
-propositie.
-
-\textbf{IH:} Voor alle formules met minder compexiteit dan $\phi$ geldt de te
-bewijzen stelling.
-
-\textbf{I.S.:} \\
-- $\phi = \psi \vee \chi:$ Volgens I.H. is $V(\psi)=$ 1 of 0, dus ook $V(\psi
-\vee \chi)$ = 1 of 0.\\
-- $\phi = \psi \wedge \chi:$ Volgens I.H. is $V(\psi)=$ 1 of 0, net als $\chi$,
-dus ook $V (\psi \wedge \chi)=$ 1 of 0.\\
-- $\phi = \psi \rightarrow \chi:$ Volgens I.H. is $V(\chi)=$ 1 of 0, net als
-$\chi$, dus ook $V(\psi \rightarrow \chi)$ = 1 of 0.
-\hfill $\Box$
-
-
-\subsection*{Inductiebewijzen 11}
-Te bewijzen: dat elke formule waarin enkel de symbolen p,(,), $\rightarrow$ optreden een tautologie is of logisch equivalent is aan p.
-
-\textbf{Base case:} $\phi$ = p, p zonder connectieven is gelijk aan p.
-
-\textbf{IH:} Voor alle formules met minder compexiteit dan $\phi$ geldt de te
-bewijzen stelling.
-
-\textbf{I.S.:} \\
-- $(\phi \rightarrow \phi) = \phi$ \\
-- $(\phi) \rightarrow \phi = \phi$ \\
-- $\phi \rightarrow (\phi) = \phi$
-\hfill $\Box$
-
-%%%%%%%%%%%%%%%%%%%%
-%% Einde document %%
-%%%%%%%%%%%%%%%%%%%%
+% The exercises for Homework 3 are:
+%  5.31(g), 5.32(2,3), 5.33(2), 5.37(2,3, van rechts naar links), 5.38(3), 5.53(Quine dolk)
+
+\subsection*{Opgave 5.31}
+
+%  Hint for exercise 5.31(g): For the last step of the proof, you need to use the rule G V (gebruik rule for the disjunction) with phi_1 = q and phi_2 = r and psi is the formula (p ∧ q) ∨ (p ∧ r).
+
+(g) $p\wedge(q\vee r) \vdash (p\wedge q)\vee(p\wedge r)$
+
+\[
+\begin{nd}
+ \hypo {1} {p\wedge(q\vee r) \vdash (p\wedge q)\vee(p\wedge r)}
+ \open
+ \hypo {2} {\exists x P(x)}
+ \open[u]
+ \hypo {3} {P(u)}
+ \have {4} {\forall y \neg P(y)}  \r{1}
+ \have {5} {\neg P(u)}            \Ae{4}
+ \have {6} {\bot}                 \ne{3,5}
+ \close
+ \have {6a}{\bot}                 \Ee{2,3-6}
+ \close
+ \have {7} {\neg \exists x P(x)}  \ni{2-6a}
+\end{nd}
+\]
+
+\subsection*{Opgave 5.32}
+
+(2) $p\wedge (q\wedge r) \vdash r \wedge p$
+
+(3) $p \rightarrow (q\wedge r), q \rightarrow s, p\vdash s$
+
+\subsection*{Opgave 5.33}
+
+(2) $\varphi\vee(\psi\wedge\chi);
+  (\varphi\vee\psi)\wedge(\varphi\vee\chi)$
+
+\begin{center}
+  \begin{tikzpicture}
+    \Tree [.$\varphi\vee(\psi\wedge\chi)\circ(\varphi\vee\psi)\wedge    (\varphi\vee\chi)$ [.$\neg$p [.p ] ]
+    [.($\neg$q$\wedge$r) [.$\neg$q q ]
+    [.r ]]]
+  \end{tikzpicture}
+\end{center}
+
+\subsection*{Opgave 5.37}
+
+(2) $\varphi\leftrightarrow\psi;
+  (\varphi\rightarrow\psi)\wedge(\psi\rightarrow\varphi)$
+
+\begin{center}
+  \begin{tikzpicture}
+    \Tree [.($\neg$p$\rightarrow$($\neg$q$\wedge$r)) [.$\neg$p [.p ] ]
+    [.($\neg$q$\wedge$r) [.$\neg$q q ]
+    [.r ]]]
+  \end{tikzpicture}
+\end{center}
+
+(3) $\varphi\rightarrow\psi;
+  \neg\psi\rightarrow\neg\varphi$
+
+\begin{center}
+  \begin{tikzpicture}
+    \Tree [.($\neg$p$\rightarrow$($\neg$q$\wedge$r)) [.$\neg$p [.p ] ]
+    [.($\neg$q$\wedge$r) [.$\neg$q q ]
+    [.r ]]]
+  \end{tikzpicture}
+\end{center}
+
+\subsection*{Opgave 5.38}
+
+(3) $((p\rightarrow q)\wedge(q\rightarrow r))\rightarrow(p\rightarrow r)$
+
+\begin{center}
+  \begin{tikzpicture}
+    \Tree [.($\neg$p$\rightarrow$($\neg$q$\wedge$r)) [.$\neg$p [.p ] ]
+    [.($\neg$q$\wedge$r) [.$\neg$q q ]
+    [.r ]]]
+  \end{tikzpicture}
+\end{center}
+
+\subsection*{Opgave 5.53}
+
+\textit{Geef de semantische tableauregels voor de Quine dolk $\dagger$.}
+
+
+
+%  5.31(g), 5.32(2,3), 5.33(2), 5.37(2,3, van rechts naar links), 5.38(3), 5.53(Quine dolk)%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
-
-
-
