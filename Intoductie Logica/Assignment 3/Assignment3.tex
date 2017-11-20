@@ -118,13 +118,17 @@
 
 \begin{center}
   \begin{tikzpicture}
-    \Tree [.$\varphi\vee(\psi\wedge\chi)\circ(\varphi\vee\psi)\wedge
-      (\varphi\vee\chi)$
-    [.$\varphi\vee(\psi\wedge\chi)\circ(\varphi,\psi)\wedge
-      (\varphi,\chi)$
-    [.$\varphi\vee(\psi,\chi)\circ(\varphi,\psi)\wedge
-      (\varphi,\chi)$
-    ] ] ]
+    \Tree [.
+      $\varphi\vee(\psi\wedge\chi)\circ(\varphi\vee\psi)\wedge(\varphi\vee\chi)$
+        [.$\varphi\circ(\varphi\vee\psi)\wedge(\varphi\vee\chi)$
+          [.$\varphi\circ\varphi\vee\psi$ [.$\varphi\circ\varphi,\psi$ [.* ]]]
+          [.$\varphi\circ\varphi\vee\chi$ [.$\varphi\circ\varphi,\chi$ [.* ]]]
+        ]
+      [.$\psi\wedge\chi\circ(\varphi\vee\psi)\wedge(\varphi\vee\chi)$
+        [.$\psi,\chi\circ\varphi\vee\psi$ [.$\psi,\chi\circ\varphi,\psi$ [.* ]]]
+        [.$\psi,\chi\circ\varphi\vee\chi$ [.$\psi,\chi\circ\varphi,\chi$ [.* ]]]
+      ]
+    ]
   \end{tikzpicture}
 \end{center}
 
@@ -135,9 +139,50 @@
 
 \begin{center}
   \begin{tikzpicture}
-    \Tree [.($\neg$p$\rightarrow$($\neg$q$\wedge$r)) [.$\neg$p [.p ] ]
-    [.($\neg$q$\wedge$r) [.$\neg$q q ]
-    [.r ]]]
+    \Tree [
+      .$\varphi\leftrightarrow\psi\;\circ\;(\varphi\rightarrow\psi)\wedge
+        (\psi\rightarrow\varphi)$
+        [
+          .$\varphi,\psi\;\circ\;(\varphi\rightarrow \psi)\wedge(\psi\rightarrow \varphi)$
+          [
+            .$\varphi,\psi\;\circ\;\varphi\rightarrow \psi$
+            [
+              .$\varphi,\psi\;\circ\;\psi$
+              [
+                .*
+              ]
+            ]
+          ] [
+            .$\varphi,\psi\;\circ\;\psi\rightarrow \varphi$
+            [
+              .$\varphi,\psi\;\circ\;\varphi$
+              [
+                .*
+              ]
+            ]
+          ]
+        ] [
+          .$\;\circ\;\varphi,\psi,(\varphi\rightarrow \psi)\wedge
+          (\psi\rightarrow \varphi)$
+          [
+            .$\;\circ\;\varphi,\psi,\varphi\rightarrow \psi$
+            [
+              .$\varphi\;\circ\;\varphi,\psi$
+              [
+                .*
+              ]
+            ]
+          ] [
+            .$\;\circ\;\varphi,\psi,\psi\rightarrow \varphi$
+            [
+              .$\psi\;\circ\;\varphi,\psi$
+              [
+                .*
+              ]
+            ]
+          ]
+        ]
+    ]
   \end{tikzpicture}
 \end{center}
 
@@ -146,11 +191,33 @@
 
 \begin{center}
   \begin{tikzpicture}
-    \Tree [.($\neg$p$\rightarrow$($\neg$q$\wedge$r)) [.$\neg$p [.p ] ]
-    [.($\neg$q$\wedge$r) [.$\neg$q q ]
-    [.r ]]]
+    \Tree [
+      .$\varphi\rightarrow\psi\;\circ\;\neg\psi\rightarrow\neg\varphi$
+        [
+          .$\neg\psi,\varphi\rightarrow\psi\;\circ\;\neg\varphi$
+          [
+            .$\varphi\rightarrow\psi\;\circ\;\neg\varphi,\psi$
+            [
+              .$\varphi,\varphi\rightarrow\psi\;\circ\;\psi$
+              [
+                .$\varphi\;\circ\;\varphi,\psi$
+                [
+                  .*
+                ]
+              ] [
+                .$\varphi,\psi\;\circ\;\psi$
+                [
+                  .*
+                ]
+              ]
+            ]
+          ]
+        ]
+    ]
   \end{tikzpicture}
 \end{center}
+
+\pagebreak
 
 \subsection*{Opgave 5.38}
 
@@ -158,9 +225,35 @@
 
 \begin{center}
   \begin{tikzpicture}
-    \Tree [.($\neg$p$\rightarrow$($\neg$q$\wedge$r)) [.$\neg$p [.p ] ]
-    [.($\neg$q$\wedge$r) [.$\neg$q q ]
-    [.r ]]]
+    \Tree [
+      .$\circ\;((p\rightarrow q)\wedge(q\rightarrow r))\rightarrow(p\rightarrow
+      r)$
+      [
+        .$(p\rightarrow q)\wedge(q\rightarrow r)\;\circ\;p\rightarrow r$
+        [
+          .$p,p\rightarrow q,q\rightarrow r\;\circ\;r$
+          [
+            .$p,q,q\rightarrow r\;\circ\;r$
+            [
+              .$p,q\;\circ\;r,q$
+              [.* ]
+            ] [
+              .$p,q,r\;\circ\;r$
+              [.* ]
+            ]
+          ] [
+            .$p,q\rightarrow r\;\circ\;p,r$
+            [
+              .$p\;\circ\;p,q,r$
+              [.* ]
+            ] [
+              .$p,r\;\circ\;p,r$
+              [.* ]
+            ]
+          ]
+        ]
+      ]
+    ]
   \end{tikzpicture}
 \end{center}
 
@@ -168,8 +261,24 @@
 
 \textit{Geef de semantische tableauregels voor de Quine dolk $\dagger$.}
 
+\begin{itemize}
 
+  \item $\dagger$ - links
+  \begin{center}
+    \begin{tikzpicture}
+      \Tree [.$\phi\dagger\psi\;\circ\qquad\;$
+        [.$\qquad\;\circ\;\phi\dagger\psi$ ] ]
+    \end{tikzpicture}
+  \end{center}
 
-%  5.31(g), 5.32(2,3), 5.33(2), 5.37(2,3, van rechts naar links), 5.38(3), 5.53(Quine dolk)%%%%%%%%%%%%%%%%%%%%
+  \item $\dagger$ - rechts
+  \begin{center}
+    \begin{tikzpicture}
+      \Tree [.$\;\qquad\circ\;\phi\dagger\psi\;$
+        [.$\phi\;\circ\quad$ ] [.$\psi\;\circ\quad$ ] ]
+    \end{tikzpicture}
+  \end{center}
+
+\end{itemize}
 
 \end{document}
