@@ -99,8 +99,11 @@
   $Bx$ : $x$ is een barbier
 
   \begin{enumerate}
-    \item $\A x(Bx \wedge \neg Sxx \rightarrow  \E y(By \wedge Syx)$
-    \item
+    \item $\A x(Bx \wedge \neg Sxx \rightarrow \E y(By \wedge Syx))$
+    \item $\A x(Bx \wedge \neg Sxx \rightarrow \E y(By \wedge \neg Syx))$
+    \item $\neg \E x(Bx \wedge \neg Sxx \wedge \A y(By \wedge Syx))$
+    \item $\E x(Bx \wedge \neg Sxx \wedge \A y(By \wedge Sxy))$
+    \item $\E x(Bx \wedge \neg Sxx \wedge \A y(By \wedge \neg Syy \wedge \neg Sxy))$
   \end{enumerate}
 
 
@@ -115,43 +118,75 @@
   'Er is een kind van Marie
   en alle kinderen van Marie zijn ook kinderen van Piet.' \\
 
-  (6) $\E x((Kxm \wedge Mx) \wedge \neg \E y(Kxy \wedge My))$
+  (6) $\E x((Kxm \wedge Mx) \wedge \neg \E y(Kxy \wedge My))$ \\
 
   'Marie heeft een zoon, en Marie heeft geen zoon.' \\
 
 
   \subsection*{Opgave 6.16}
 
-  (1)
+  (1) $\A x(Rxx)$ \\
 
-  (2)
+  Onwaar. \\
 
-  (3)
+  (2) $\E x(Rxx)$ \\
 
-  (4)
+  Onwaar. \\
 
-  (5)
+  (3) $\A x \E y(Rxy)$ \\
+
+  Waar. \\
+
+  (4) $\E x \A y(Rxy)$ \\
+
+  Klopt dit???
+
+  Onwaar. \\
+
+  (5) $\A x(\E y Rxy \rightarrow Rxx)$ \\
+
+  Onwaar. \\
+
 
   \subsection*{Opgave 6.18}
 
-  (3)
+  (3) $\A x(Rxx \rightarrow Px)$ \\
 
-  (6)
+  Onwaar. \\
 
-  (9)
+  (6) $\A x(Px \rightarrow \E y Rxy)$ \\
 
-  (10)
+  Onwaar. \\
+
+  (9) $\E x \E y(Rxy \wedge \neg Px \wedge \neg Py)$ \\
+
+  Klopt dit
+
+  Onwaar. \\
+
+  (10) $\A x(Rxx \rightarrow \E y(Rxy \wedge Py))$ \\
+
+  Waar. \\
+
 
   \subsection*{Opgave 6.22}
 
   % 1. ∃xRxx∧Pa 2. ∃x∃yRxy → Px 3. ∃x∃y(Rxy∧Py)
 
-  (4)
+  (4) $[b/y](\E x \E y Rxy \wedge Py)$ \\
 
-  (5)
+  Na substitutie: $\E x \E b Rxb \wedge Pb$ \\
 
-  (6)
+  (5) $[a/x] \A x \A y Rxy \rightarrow Px$ \\
 
-  (7)
+  Na substitutie: $\A a \A y Ray \rightarrow Pa$ \\
+
+  (6) $[a/x] (\A x \A y Rxy \rightarrow [b/x]Px)$ \\
+
+  Na substitutie: $\A a \A y Ray \rightarrow Pb$ \\
+
+  (7) $\E x Px \wedge [a/x] \E y Rxy$ \\
+
+  Na substitutie: $\E x Px \wedge \E y Ray$ \\
 
 \end{document}
