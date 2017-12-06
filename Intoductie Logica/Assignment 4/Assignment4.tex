@@ -4,185 +4,185 @@
 
 \documentclass[11pt]{article}
 
-  \usepackage{amsmath,amsfonts,amssymb}
-  \usepackage{upgreek}
-  \usepackage{enumerate}
-  \usepackage{enumitem}   %
-  \usepackage{multicol}
-  \usepackage{scrextend}
-  \usepackage{fancyhdr}
-  \usepackage{lastpage}
-  \usepackage{subcaption} % 2 column images
-  \usepackage[all]{xy}
-  \usepackage{tikz-qtree}
-  \usepackage[margin=2.5cm]{geometry}
-  \input{../../Template/fitch.sty}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{upgreek}
+\usepackage{enumerate}
+\usepackage{enumitem}   %
+\usepackage{multicol}
+\usepackage{scrextend}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{subcaption} % 2 column images
+\usepackage[all]{xy}
+\usepackage{tikz-qtree}
+\usepackage[margin=2.5cm]{geometry}
+\input{../../Template/fitch.sty}
 
-  \setlength{\parindent}{0pt}
+\setlength{\parindent}{0pt}
 
-  \pagestyle{fancy}
+\pagestyle{fancy}
 
-  \lhead{\opdrachtNaam\ \opdrachtNummer}
-  \rhead{\naam(\studentNummer)}
-  \rfoot{Pagina\ \thepage\ van\ \pageref{LastPage}}
-  \lfoot{\datum}
-  \cfoot{}
+\lhead{\opdrachtNaam\ \opdrachtNummer}
+\rhead{\naam(\studentNummer)}
+\rfoot{Pagina\ \thepage\ van\ \pageref{LastPage}}
+\lfoot{\datum}
+\cfoot{}
 
-  \renewcommand\headrulewidth{0.4pt}
-  \renewcommand\footrulewidth{0.4pt}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
 
-  \newcommand{\E}{\exists}
-  \newcommand{\A}{\forall}
+\newcommand{\E}{\exists}
+\newcommand{\A}{\forall}
 
-  \newcommand{\ccen}[2]{\llap{$#1$}${}\mathrel{\circ}{}$\rlap{$#2$}}
+\newcommand{\ccen}[2]{\llap{$#1$}${}\mathrel{\circ}{}$\rlap{$#2$}}
 
-  %%%%%%%%%%%%%%
-  %% Gegevens %%
-  %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+%% Gegevens %%
+%%%%%%%%%%%%%%
 
-  \newcommand{\naam}          {Stefan Schenk}
-  \newcommand{\studentNummer} {11881798}
-  \newcommand{\opdrachtNaam}  {Assignment}
-  \newcommand{\opdrachtNummer}{4}
-  \newcommand{\datum}         {December 2017}
+\newcommand{\naam}          {Stefan Schenk}
+\newcommand{\studentNummer} {11881798}
+\newcommand{\opdrachtNaam}  {Assignment}
+\newcommand{\opdrachtNummer}{4}
+\newcommand{\datum}         {December 2017}
 
-  %%%%%%%%%%%%%%%%
-  %% Antwoorden %%
-  %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+%% Antwoorden %%
+%%%%%%%%%%%%%%%%
 
-  \begin{document}
+\begin{document}
 
-  % Opgaven:
-  %
-  % Exercises 6.3(5,6), 6.5(7,8), 6.6(4,5), 6.9, 6,13(4-6), 6.16(1-5),
-  %   6.18(3,6,9,10) and 6.22(4-7)
+% Opgaven:
+%
+% Exercises 6.3(5,6), 6.5(7,8), 6.6(4,5), 6.9, 6,13(4-6), 6.16(1-5),
+%   6.18(3,6,9,10) and 6.22(4-7)
 
-  \subsection*{Opgave 6.3}
+\subsection*{Opgave 6.3}
 
-  (5) $\E z\A x(Ax \wedge Bz)$ \\
+(5) $\E z\A x(Ax \wedge Bz)$ \\
 
-  Scope: $(Ax \wedge Bz)$ \\
+Scope: $(Ax \wedge Bz)$ \\
 
-  (6) $\A x(Ax \rightarrow Bx) \wedge Cx$ \\
+(6) $\A x(Ax \rightarrow Bx) \wedge Cx$ \\
 
-  Scope: $(Ax \rightarrow Bx)$
+Scope: $(Ax \rightarrow Bx)$
 
 
-  \subsection*{Opgave 6.5}
+\subsection*{Opgave 6.5}
 
-  (7) $\A x((Ax \rightarrow Bx) \wedge Cx)$ \\
+(7) $\A x((Ax \rightarrow Bx) \wedge Cx)$ \\
 
-  Gesloten \\
+Gesloten \\
 
-  (8) $(Ax \rightarrow \A xBx) \wedge Cx$ \\
+(8) $(Ax \rightarrow \A xBx) \wedge Cx$ \\
 
-  Open \\
+Open \\
 
 
-  \subsection*{Opgave 6.6}
+\subsection*{Opgave 6.6}
 
-  (4) $\neg \E xAx \vee \A yBy$ \\
+(4) $\neg \E xAx \vee \A yBy$ \\
 
-  Alleen universeel: $\neg \neg \A x \neg Ax \vee \A yBy$ \\
+Alleen universeel: $\neg \neg \A x \neg Ax \vee \A yBy$ \\
 
-  (5) $\neg (\E xAx \vee \A yBy)$ \\
+(5) $\neg (\E xAx \vee \A yBy)$ \\
 
-  Alleen universeel: $\neg (\neg \A x \neg Ax \vee \A yBy)$
+Alleen universeel: $\neg (\neg \A x \neg Ax \vee \A yBy)$
 
 
-  \subsection*{Opgave 6.9}
+\subsection*{Opgave 6.9}
 
-  Vertaalsluitel: \\
+Vertaalsluitel: \\
 
-  $Sxy$ : $x$ scheert $y$
+$Sxy$ : $x$ scheert $y$
 
-  $Bx$ : $x$ is een barbier
+$Bx$ : $x$ is een barbier
 
-  \begin{enumerate}
-    \item $\A x(Bx \wedge \neg Sxx \rightarrow \E y(By \wedge Syx))$
-    \item $\A x(Bx \wedge \neg Sxx \rightarrow \E y(By \wedge \neg Syx))$
-    \item $\neg \E x(Bx \wedge \neg Sxx \wedge \A y(By \wedge Syx))$
-    \item $\E x(Bx \wedge \neg Sxx \wedge \A y(By \wedge Sxy))$
-    \item $\E x(Bx \wedge \neg Sxx \wedge \A y(By \wedge \neg Syy \wedge \neg Sxy))$
-  \end{enumerate}
+\begin{enumerate}
+  \item $\A x(Bx \wedge \neg Sxx \rightarrow \E y(By \wedge Syx))$
+  \item $\A x(Bx \wedge \neg Sxx \rightarrow \E y(By \wedge \neg Syx))$
+  \item $\neg \E x(Bx \wedge \neg Sxx \wedge \A y(By \wedge Syx))$
+  \item $\E x(Bx \wedge \neg Sxx \wedge \A y(By \wedge Sxy))$
+  \item $\E x(Bx \wedge \neg Sxx \wedge \A y(By \wedge \neg Syy \wedge \neg Sxy))$
+\end{enumerate}
 
 
-  \subsection*{Opgave 6.13}
+\subsection*{Opgave 6.13}
 
-  (4) $\E x((Kxm \wedge Kxp) \wedge \neg Mx)$ \\
+(4) $\E x((Kxm \wedge Kxp) \wedge \neg Mx)$ \\
 
-  'Er is een kind van Marie en Piet, en het is geen mannetje.' \\
+'Er is een kind van Marie en Piet, en het is geen mannetje.' \\
 
-  (5) $\E x(Kxm \wedge \A y(Kym \rightarrow Kyp))$ \\
+(5) $\E x(Kxm \wedge \A y(Kym \rightarrow Kyp))$ \\
 
-  'Er is een kind van Marie
-  en alle kinderen van Marie zijn ook kinderen van Piet.' \\
+'Er is een kind van Marie
+en alle kinderen van Marie zijn ook kinderen van Piet.' \\
 
-  (6) $\E x((Kxm \wedge Mx) \wedge \neg \E y(Kxy \wedge My))$ \\
+(6) $\E x((Kxm \wedge Mx) \wedge \neg \E y(Kxy \wedge My))$ \\
 
-  'Marie heeft een zoon, en Marie heeft geen zoon.' \\
+'Marie heeft een zoon, en Marie heeft geen zoon.' \\
 
 
-  \subsection*{Opgave 6.16}
+\subsection*{Opgave 6.16}
 
-  (1) $\A x(Rxx)$ \\
+(1) $\A x(Rxx)$ \\
 
-  Onwaar. \\
+Onwaar. \\
 
-  (2) $\E x(Rxx)$ \\
+(2) $\E x(Rxx)$ \\
 
-  Onwaar. \\
+Onwaar. \\
 
-  (3) $\A x \E y(Rxy)$ \\
+(3) $\A x \E y(Rxy)$ \\
 
-  Waar. \\
+Waar. \\
 
-  (4) $\E x \A y(Rxy)$ \\
+(4) $\E x \A y(Rxy)$ \\
 
-  Onwaar. \\
+Onwaar. \\
 
-  (5) $\A x(\E y Rxy \rightarrow Rxx)$ \\
+(5) $\A x(\E y Rxy \rightarrow Rxx)$ \\
 
-  Onwaar. \\
+Onwaar. \\
 
 
-  \subsection*{Opgave 6.18}
+\subsection*{Opgave 6.18}
 
-  (3) $\A x(Rxx \rightarrow Px)$ \\
+(3) $\A x(Rxx \rightarrow Px)$ \\
 
-  Onwaar. \\
+Onwaar. \\
 
-  (6) $\A x(Px \rightarrow \E y Rxy)$ \\
+(6) $\A x(Px \rightarrow \E y Rxy)$ \\
 
-  Onwaar. \\
+Onwaar. \\
 
-  (9) $\E x \E y(Rxy \wedge \neg Px \wedge \neg Py)$ \\
+(9) $\E x \E y(Rxy \wedge \neg Px \wedge \neg Py)$ \\
 
-  Waar. \\
+Waar. \\
 
-  (10) $\A x(Rxx \rightarrow \E y(Rxy \wedge Py))$ \\
+(10) $\A x(Rxx \rightarrow \E y(Rxy \wedge Py))$ \\
 
-  Waar. \\
+Waar. \\
 
 
-  \subsection*{Opgave 6.22}
+\subsection*{Opgave 6.22}
 
-  % 1. ∃xRxx∧Pa 2. ∃x∃yRxy → Px 3. ∃x∃y(Rxy∧Py)
+% 1. ∃xRxx∧Pa 2. ∃x∃yRxy → Px 3. ∃x∃y(Rxy∧Py)
 
-  (4) $[b/y](\E x \E y Rxy \wedge Py)$ \\
+(4) $[b/y](\E x \E y Rxy \wedge Py)$ \\
 
-  $\E x \E y Rxy \wedge Pb$ \\
+$\E x \E y Rxy \wedge Pb$ \\
 
-  (5) $[a/x] \A x \A y Rxy \rightarrow Px$ \\
+(5) $[a/x] \A x \A y Rxy \rightarrow Px$ \\
 
-  $\A x \A y Rxy \rightarrow Px$ \\
+$\A x \A y Rxy \rightarrow Px$ \\
 
-  (6) $[a/x] (\A x \A y Rxy \rightarrow [b/x]Px)$ \\
+(6) $[a/x] (\A x \A y Rxy \rightarrow [b/x]Px)$ \\
 
-  $\A x \A y Rxy \rightarrow Pb$ \\
+$\A x \A y Rxy \rightarrow Pb$ \\
 
-  (7) $\E x Px \wedge [a/x] \E y Rxy$ \\
+(7) $\E x Px \wedge [a/x] \E y Rxy$ \\
 
-  $\E x Px \wedge \E y Ray$ \\
+$\E x Px \wedge \E y Ray$ \\
 
 \end{document}

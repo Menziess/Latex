@@ -1,0 +1,105 @@
+%%%%%%%%%%%%%%%%
+%% Preambule  %%
+%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{upgreek}
+\usepackage{enumerate}
+\usepackage{enumitem}   %
+\usepackage{multicol}
+\usepackage{scrextend}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{subcaption} % 2 column images
+\usepackage[all]{xy}
+\usepackage{tikz-qtree}
+\usepackage[margin=2.5cm]{geometry}
+\input{../../Template/fitch.sty}
+
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+
+\lhead{\opdrachtNaam\ \opdrachtNummer}
+\rhead{\naam(\studentNummer)}
+\rfoot{Pagina\ \thepage\ van\ \pageref{LastPage}}
+\lfoot{\datum}
+\cfoot{}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\newcommand{\E}{\exists}
+\newcommand{\A}{\forall}
+
+\newcommand{\ccen}[2]{\llap{$#1$}${}\mathrel{\circ}{}$\rlap{$#2$}}
+
+%%%%%%%%%%%%%%
+%% Gegevens %%
+%%%%%%%%%%%%%%
+
+\newcommand{\naam}          {Stefan Schenk}
+\newcommand{\studentNummer} {11881798}
+\newcommand{\opdrachtNaam}  {Assignment}
+\newcommand{\opdrachtNummer}{5}
+\newcommand{\datum}         {December 2017}
+
+%%%%%%%%%%%%%%%%
+%% Antwoorden %%
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Opgaven:
+%
+% 6.24, 6.26, 6.30
+% extra 2b(ii,iv,vi), 5(f,i,m,r,s), 6(ii,iv,vi), 7(ii,iv,vi,viii,x), 8.
+
+\subsection*{Opgave 6.24}
+
+\subsection*{Opgave 6.26}
+
+\subsection*{Opgave 6.30}
+
+\subsection*{Extra Opgave 5}
+\begin{enumerate}[label=\alph*]
+  \setcounter{enumi}{5}
+  \item
+  \setcounter{enumi}{8}
+  \item
+  \setcounter{enumi}{12}
+  \item
+  \setcounter{enumi}{17}
+  \item
+  \setcounter{enumi}{18}
+  \item
+\end{enumerate}
+
+
+\subsection*{Extra Opgave 6}
+\begin{enumerate}[label=\roman*]
+  \setcounter{enumi}{1}
+  \item
+  \setcounter{enumi}{3}
+  \item
+  \setcounter{enumi}{5}
+  \item
+\end{enumerate}
+
+\subsection*{Extra Opgave 7}
+\begin{enumerate}[label=\roman*]
+  \setcounter{enumi}{1}
+  \item
+  \setcounter{enumi}{3}
+  \item
+  \setcounter{enumi}{5}
+  \item
+  \setcounter{enumi}{7}
+  \item
+  \setcounter{enumi}{9}
+  \item
+\end{enumerate}
+
+\end{document}
