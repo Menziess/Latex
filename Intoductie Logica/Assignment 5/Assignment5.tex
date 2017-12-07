@@ -58,48 +58,112 @@
 % extra 2b(ii,iv,vi), 5(f,i,m,r,s), 6(ii,iv,vi), 7(ii,iv,vi,viii,x), 8.
 
 \subsection*{Opgave 6.24}
+% ‘Piet houdt van Annie, maar Annie houdt van een ander’.
+$Hpa \wedge \E x(Hax \wedge x \neq p) $
+
 
 \subsection*{Opgave 6.26}
+De formule is waar. Alleen 1 heeft maar een pijl die naar 2 gaat. Van 2 gaat er
+ook een pijl naar 2, maar er gaat ook een pijl vanuit 2 naar 3.
+
 
 \subsection*{Opgave 6.30}
+\begin{itemize}
+  \item Waar      % 3
+  \item Waar      % 3
+  \item Niet waar % 2
+  \item Waar      % 3
+  \item Niet waar % 3
+  \item Waar
+\end{itemize}
+
 
 \subsection*{Extra Opgave 5}
 \begin{enumerate}[label=\alph*]
   \setcounter{enumi}{5}
-  \item
+  % Er zijn hoogstens drie goden.
+  \item Domein: goden
+
+  $\E x \E y \E z (x \neq y, y \neq z)$
+
   \setcounter{enumi}{8}
-  \item
+  % Een mens heeft twee ouders.
+  \item Domein: mensen
+
+  Vertaalsleutel: Oxy : x Ouder van y
+
+  $\A k \E m \E p (Omk, Opk)$
+
   \setcounter{enumi}{12}
-  \item
+  % Karel houdt alleen van hen van wie Elske houdt.
+  \item Domein: mensen
+
+  Vertaalsleutel: Hxy : x Houdt van y
+
+  $\A x (Hex \rightarrow Hax)$
+
   \setcounter{enumi}{17}
-  \item
+  % Iedereen houdt alleen van zichzelf.
+  \item Domein: mensen
+
+  Vertaalsleutel: Hxy : x Houdt van y
+
+  $\A x \A y(Hxx \wedge \neg Hxy)$
+
   \setcounter{enumi}{18}
-  \item
+  % Iemand die van iedereen houdt behalve van zichzelf is een altruist.
+  \item Domein: mensen
+
+  Vertaalsleutel: Hxy : x Houdt van y, Ax : x is een Altruist
+
+  $\A x \A y (Hxy \wedge Hxx)$
+
 \end{enumerate}
 
 
 \subsection*{Extra Opgave 6}
 \begin{enumerate}[label=\roman*]
   \setcounter{enumi}{1}
-  \item
+  % Er zijn geen symmetrische relaties
+  \item Niet waar
+
   \setcounter{enumi}{3}
-  \item
+  % Er zijn twee nodes, er bestaat geen parent voor een van de twee.
+  \item Waar
+
   \setcounter{enumi}{5}
-  \item
+  % Er zijn twee nodes, waarvanuit een pijl gaat naar een z. Deze twee nodes,
+  % zie naar de z gaan, als ze naar een z gaan, gaat de ander ook naar die z.
+  \item Niet waars
+
 \end{enumerate}
+
 
 \subsection*{Extra Opgave 7}
 \begin{enumerate}[label=\roman*]
   \setcounter{enumi}{1}
-  \item
+  % Als x en y twee lijnen zijn, dan bestaat er een punt die op die lijnen ligt.
+  \item Waar  % Punt 2
+
   \setcounter{enumi}{3}
-  \item
+  % Voor alle punten zijn er twee lijnen waarbij ieder punt of een van de twee
+  % lijnen ligt.
+  \item Waar
+
   \setcounter{enumi}{5}
-  \item
+  % Er bestaan twee lijnen en twee punten waarbij beide punten op beide lijnen
+  % liggen.
+  \item Niet waar
+
   \setcounter{enumi}{7}
-  \item
+  % Alle lijnen hebben drie punten die op de lijnen liggen, en de punten liggen
+  % niet op elkaar.
+  \item Niet waar
+
   \setcounter{enumi}{9}
-  \item
+  % Alle punten die op twee lijnen liggen, liggen tussen twee punten in.
+  \item Niet waar
+
 \end{enumerate}
 
 \end{document}
