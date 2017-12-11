@@ -82,9 +82,14 @@ ook een pijl naar 2, maar er gaat ook een pijl vanuit 2 naar 3.
 \begin{enumerate}[label=\alph*]
   \setcounter{enumi}{5}
   % Er zijn hoogstens drie goden.
-  \item Domein: goden
+  \item Domein: entities
 
-  $\E x \E y \E z (x \neq y, y \neq z)$
+  Vertaalsleutel: Gx : x is een God
+
+  $\A w \E x \E y \E z
+  ((Gx \wedge x \neq y \wedge x \neq z \wedge x \neq w) \wedge
+  (Gy \wedge y \neq z \wedge y \neq w) \wedge
+  Gz \wedge z \neq w)$
 
   \setcounter{enumi}{8}
   % Een mens heeft twee ouders.
@@ -92,7 +97,7 @@ ook een pijl naar 2, maar er gaat ook een pijl vanuit 2 naar 3.
 
   Vertaalsleutel: Oxy : x Ouder van y
 
-  $\A k \E m \E p (Omk, Opk)$
+  $\A k \E m \E p (Omk \wedge Opk \wedge k \neq m \wedge k \neq p \wedge p \neq m)$
 
   \setcounter{enumi}{12}
   % Karel houdt alleen van hen van wie Elske houdt.
@@ -100,7 +105,11 @@ ook een pijl naar 2, maar er gaat ook een pijl vanuit 2 naar 3.
 
   Vertaalsleutel: Hxy : x Houdt van y
 
-  $\A x (Hex \rightarrow Hax)$
+  k = Karel
+
+  e = Elske
+
+  $\A x (Hex \rightarrow Hkx)$
 
   \setcounter{enumi}{17}
   % Iedereen houdt alleen van zichzelf.
@@ -108,7 +117,7 @@ ook een pijl naar 2, maar er gaat ook een pijl vanuit 2 naar 3.
 
   Vertaalsleutel: Hxy : x Houdt van y
 
-  $\A x \A y(Hxx \wedge \neg Hxy)$
+  $\A x \A y(x \neq y \leftrightarrow (Hxx \wedge \neg Hxy))$
 
   \setcounter{enumi}{18}
   % Iemand die van iedereen houdt behalve van zichzelf is een altruist.
@@ -116,7 +125,7 @@ ook een pijl naar 2, maar er gaat ook een pijl vanuit 2 naar 3.
 
   Vertaalsleutel: Hxy : x Houdt van y, Ax : x is een Altruist
 
-  $\A x \A y (Hxy \wedge Hxx)$
+  $\A x \A y((x \neq y \leftrightarrow (Hxy \wedge \neg Hxx)) \rightarrow Ax)$
 
 \end{enumerate}
 
