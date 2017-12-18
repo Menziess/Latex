@@ -15,6 +15,8 @@
 \usepackage{subcaption} % 2 column images
 \usepackage[all]{xy}
 \usepackage{tikz-qtree}
+\usepackage{latexsym}
+\usepackage{forest}
 \usepackage[margin=2.5cm]{geometry}
 \input{../../Template/fitch.sty}
 
@@ -56,49 +58,244 @@
 %
 % Opgaven 5 (a t/m c), 9, 14, 21, 27(a,b), 28(d), 31(a, c), 35(1, 3), 38.
 
+Ik heb bij alle opdrachten de notatie van de huiswerk-uitwerkingen aangehouden.
+
 \subsection*{Opgave 5}
 \begin{enumerate}[label=\alph*]
   \item $p_1 \vee (p_2 \wedge p_3)$
 
-  todo
+  $(p_1 \vee p_2) \wedge (p_1 \vee p_3)$
 
   \item $(p_1 \wedge \neg p_3) \vee (p_2 \wedge p_3)$
 
-  todo
+  $(p_1 \vee p_2) \wedge (\neg p_3 \vee p_2) \wedge
+  (p_1 \vee p_3) \wedge (\neg p_3 \vee p_3)$
 
   \item $p_1 \rightarrow (p_2 \wedge p_3)$
 
-  todo
+  $(\neg p_1 \vee p_2) \wedge (\neg p_1 \vee p_3)$
 
 \end{enumerate}
 
 
 \subsection*{Opgave 9}
+Laat zien dat $C \vee A, \neg C \models A \wedge \neg C$ geldig is.
+
+Dus dat $\{C\vee A,\neg C,\neg(A\wedge\neg C)\}$
+
+$\Leftrightarrow \{C \vee A, \neg C, \neg A \vee C \}$
+uitkomt op een contradictie.
+
+Laat zien dat $F = \{C \vee A, \neg C, \neg A \vee C \}$ niet consistent is.
+
+\begin{enumerate}
+  \item $C \vee A$ (elem F)
+  \item $\neg C$ (elem F)
+  \item $\neg A \vee C$ (elem F)
+  \item $C$ (res 1, 3)
+  \item $\Box$ (res 2, 4)
+\end{enumerate}
+
+
 \subsection*{Opgave 14}
+Laat zien dat $B \rightarrow C, A \models (A \wedge B) \rightarrow C$ geldig is.
+
+Dus dat $F = \{\neg B \vee C, A, A, B, \neg C\}$
+uitkomt op een contradictie.
+
+\begin{enumerate}
+  \item $C \vee A$ (elem F)
+  \item $\neg C$ (elem F)
+  \item $\neg A \vee C$ (elem F)
+  \item $C$ (res 1, 3)
+  \item $\Box$ (res 2, 4)
+\end{enumerate}
+
+
 \subsection*{Opgave 21}
+Laat zien dat $\neg (A \wedge \neg C \wedge \neg D), \neg A \rightarrow (\neg B
+\vee C),\neg C \models (A \vee B) \rightarrow (A \wedge D)$ geldig is.
+
+Dus dat $F =\{(\neg A \vee C \vee D), (A \vee \neg B \vee C),\neg C,
+(A \vee B), (\neg A \vee \neg D)\}$ onvervulbaar is.
+
+
+\begin{enumerate}
+  \item $\neg A \vee C \vee D$ (elem F)
+  \item $A \vee \neg B \vee C$ (elem F)
+  \item $\neg C$ (elem F)
+  \item $A \vee B$ (elem F)
+  \item $\neg A \vee \neg D$ (elem F)
+  \item $A \vee \neg B$ (res 2, 3)
+  \item $A$ (res 4, 6)
+  \item $C \vee D$ (res 1, 7)
+  \item $\neg A \vee C$ (res 5, 8)
+  \item $\neg A$ (res 3, 9)
+  \item $\Box$ (res 7, 10)
+\end{enumerate}
+
+
 \subsection*{Opgave 27}
 \begin{enumerate}[label=\alph*]
-  \item a
-  \item b
+  \item $\E x\; C(x) \rightarrow \E w\; G(w)$
+
+  $\neg \E x C(x) \vee \E w G(w)$
+
+  $\A x \neg C(x) \vee \E w G(w)$
+
+  $\A x \E w [\neg C(x) \vee G(w)]$
+
+  \item $\A x G(x) \rightarrow \E w G(w)$
+
+  $\neg \A x C(x) \vee \E w G(w)$
+
+  $\E x \neg C(x) \vee \E w G(w)$
+
+  $\E x \E w [\neg C(x) \vee G(w)]$
 \end{enumerate}
+
+
 \subsection*{Opgave 28}
 \begin{enumerate}[label=\alph*]
   \setcounter{enumi}{3}
-  \item d
+  \item $\A v [\E x G(x,v) \leftrightarrow \E x L(x,v)]$
+
+  $\A v [(\E x G(x,v) \wedge \E x L(x,v)) \vee
+         (\neg\E x G(x,v) \wedge \neg\E x L(x,v))]$
+
+  $\A v \E x[( G(x,v) \wedge L(x,v)) \vee
+         (\neg G(x,v) \wedge \neg L(x,v))]$
 \end{enumerate}
+
+
 \subsection*{Opgave 31}
-\begin{enumerate}[label=\alph*]
-  \item a
+\begin{enumerate}
+  \item $\{\A x P(x, a), \A y \neg P(y, a)\}$
+
+  \begin{forest}
+    for tree={
+      grow'=90,
+      parent anchor=north,
+      math content
+    }
+    [\Box
+      [{\{\A y P(y, a)\}}
+        [{[y/x]}
+          [{\{\A x P(x, a)\}}]
+        ]
+      ]
+      [{\{\A y\neg P(y, a)\}}]
+    ]
+  \end{forest}
+
   \setcounter{enumi}{2}
-  \item c
+
+  \item $\{\A x[P(x) \vee \neg Q(x)], Q(c), \A u \A v[R(u, v) \vee \neg P(u)],
+  \A x[\neg R(x, x)]\}$
+
+  \begin{forest}
+    for tree={
+      grow'=90,
+      parent anchor=north,
+      math content
+    }
+    [\Box
+      [{\{\A x[R(x, x)]\}}
+        [{[x/c] [x/v]}
+          [{\{\A c \A v[R(c, v)]\}}
+            [{\{\A c[P(c)]\}}
+              [{\{\A c[P(c) \vee \neg Q(c)]\}}
+                [{[c/x]}
+                  [{\{\A x[P(x) \vee \neg Q(x)]\}}]
+                ]
+              ]
+              [{\{Q(c)\}}]
+            ]
+            [{\{\A c \A v[R(c, v) \vee \neg P(c)]\}}
+              [{[c/u]}
+                [{\{\A u \A v[R(u, v) \vee \neg P(u)]\}}]
+              ]
+            ]
+          ]
+        ]
+      ]
+      [{\{\A x[\neg R(x, x)]\}}]
+    ]
+  \end{forest}
+
 \end{enumerate}
+
+
 \subsection*{Opgave 35}
 \begin{enumerate}
-  \item 1
-  \setcounter{enumi}{2}
-  \item 3
-\end{enumerate}
-\subsection*{Opgave 38}
+  \item $\A x \E y Q(x,y) \rightarrow P(x)$
 
+  $\{\{\neg Q(x, f(x)), P(x)\}\}$
+
+  \setcounter{enumi}{2}
+  \item $\neg \E x [(\neg P(x) \wedge \neg R(x, a))
+    \vee \E y \neg[R(x,y) \rightarrow R(y,x)]]$
+
+  $\Leftrightarrow \A x \neg[(\neg P(x) \wedge \neg R(x, a))
+    \vee \E y \neg[R(x,y) \rightarrow R(y,x)]]$
+
+  $\Leftrightarrow \A x [\neg(\neg P(x) \wedge \neg R(x, a))
+    \wedge \neg\E y \neg[R(x,y) \rightarrow R(y,x)]]$
+
+  $\Leftrightarrow \A x [(P(x) \vee R(x, a))
+    \wedge \A y [R(x,y) \rightarrow R(y,x)]]$
+
+  $\Leftrightarrow \A x \A y [(P(x) \vee R(x, a))
+    \wedge (\neg R(x,y) \vee R(y,x))]$
+
+  $\{\{P(x), R(x, a)\}, \{\neg R(x,y), R(y,x)\}\}$
+
+\end{enumerate}
+
+
+\subsection*{Opgave 38}
+Laat zien dat $\A x \A y [\neg P(x) \vee \neg Q(y) \vee Q(g(x,y))],
+\A x [\neg P(x) \vee Q(h(x))], P(a) \models Q(g(a, h(a))$ geldig is.
+
+Voeg de negatie van de conclusie toe aan je premissen, zet in prenex-normaalvorm en skolomiseer:
+
+$\A x \A y [\neg P(x) \vee \neg Q(y) \vee Q(g(x,y))],
+\A x [\neg P(x) \vee Q(h(x))], P(a), \neg Q(g(a, h(a))$ \\
+
+Clauses: $\{\{ \neg P(x), \neg Q(y), Q(g(x,y)) \},
+  \{\neg P(x), Q(h(x))\}, \{P(a)\}, \{\neg Q(g(a, h(a)) \}\}$ \\
+
+  \begin{forest}
+    for tree={
+      grow'=90,
+      parent anchor=north,
+      math content
+    }
+    [\Box
+      [{\{Q(g(a,h(a))) \}}
+        [{\{ \neg P(a), Q(g(a,h(a))) \}}
+          [{\{ \neg P(a), \neg Q(h(a)), Q(g(a,h(a))) \}}
+            [{[h(a)/y]}
+              [{\{ \neg P(a), \neg Q(y), Q(g(a,y)) \}}
+                [{[a/x]}
+                  [{\{ \neg P(x), \neg Q(y), Q(g(x,y)) \}}]
+                ]
+              ]
+            ]
+          ]
+          [{\{Q(h(a))\}}
+            [{\{\neg P(a), Q(h(a))\}}
+              [{[a/x]}
+                [{\{\neg P(x), Q(h(x))\}}]
+              ]
+            ]
+            [{\{P(a)\}}]
+          ]
+        ]
+        [{\{P(a)\}}]
+      ]
+      [{\{\neg Q(g(a, h(a))\}}]
+    ]
+  \end{forest}
 
 \end{document}
