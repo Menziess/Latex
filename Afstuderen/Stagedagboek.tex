@@ -1,0 +1,76 @@
+
+%%%%%%%%%%%%%%%%
+%% Preambule  %%
+%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{upgreek}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{scrextend}
+
+\usepackage[all]{xy}
+\usepackage{tikz-qtree}
+\usepackage[margin=2.5cm]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{latexsym}
+
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+
+\lhead{\opdrachtNaam}
+\rhead{\naam(\studentNummer)}
+\rfoot{Pagina\ \thepage\ van\ \pageref{LastPage}}
+\lfoot{\datum}
+\cfoot{}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\newcommand{\E}{\exists}
+\newcommand{\A}{\forall}
+
+\newcommand{\ccen}[2]{\llap{$#1$}${}\mathrel{\circ}{}$\rlap{$#2$}}
+
+%%%%%%%%%%%%%%
+%% Gegevens %%
+%%%%%%%%%%%%%%
+
+\newcommand{\naam}          {Stefan Schenk}
+\newcommand{\studentNummer} {500600679}
+\newcommand{\opdrachtNaam}  {Afstuderen - Stagedagboek - TaxiID}
+\newcommand{\datum}         {Januari 2018}
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%
+%%    Logo    %%
+%%%%%%%%%%%%%%%%
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=.1\linewidth]{res/logo}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%
+%%    todo    %%
+%%%%%%%%%%%%%%%%
+\input{src/todo}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%
+%%    Uren    %%
+%%%%%%%%%%%%%%%%
+\input{src/uren}
+
+\end{document}
