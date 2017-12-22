@@ -1,48 +1,79 @@
-\documentclass[a4paper, 11pt]{article} % Font size (can be 10pt, 11pt or 12pt) and paper size (remove a4paper for US letter paper)
+%%%%%%%%%%%%%%%%
+%% Preambule  %%
+%%%%%%%%%%%%%%%%
 
-\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
-\usepackage{graphicx} % Required for including pictures
-\usepackage{wrapfig} % Allows in-line images
+\documentclass[11pt]{article}
 
-\usepackage{mathpazo} % Use the Palatino font
-\usepackage[T1]{fontenc} % Required for accented characters
-\linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{upgreek}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{scrextend}
 
-\makeatletter
-\renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
-\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
+\usepackage[all]{xy}
+\usepackage{tikz-qtree}
+\usepackage[margin=2.5cm]{geometry}
 
-\renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
-\begin{flushright} % Right align
-{\LARGE\@title} % Increase the font size of the title
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{subcaption}
 
-\vspace{50pt} % Some vertical space between the title and author name
+\setlength{\parindent}{0pt}
 
-{\large\@author} % Author name
-\\\@date % Date
+\pagestyle{fancy}
 
-\vspace{40pt} % Some vertical space between the author block and abstract
-\end{flushright}
-}
+\lhead{\opdrachtNaam\ \opdrachtNummer}
+\rhead{\naam(\studentNummer)}
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}}
+\lfoot{\datum}
+\cfoot{Fuzzy Logic}
 
-%----------------------------------------------------------------------------------------
-%	TITLE
-%----------------------------------------------------------------------------------------
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
 
-\title{\textbf{Unnecessarily Long Essay Title}\\ % Title
-Focused and Deliciously Witty Subtitle} % Subtitle
 
-\author{\textsc{Ford Prefect} % Author
-\\{\textit{Interstellar University}}} % Institution
+%%%%%%%%%%%%%%%%
+%%  Gegevens  %%
+%%%%%%%%%%%%%%%%
 
-\date{\today} % Date
+\newcommand{\naam}          {Stefan Schenk}
+\newcommand{\studentNummer} {11881798}
+\newcommand{\opdrachtNaam}  {Assignment}
+\newcommand{\opdrachtNummer}{3}
+\newcommand{\datum}         {December 2017}
 
-%----------------------------------------------------------------------------------------
 
 \begin{document}
 
-\maketitle % Print the title section
+%%%%%%%%%%%%%%%%
+%% Question 1 %%
+%%%%%%%%%%%%%%%%
+\section*{The concepts of precisiation and cointension}
+\input{src/question1}
 
-\input{src/body}
+
+%%%%%%%%%%%%%%%%
+%% Question 2 %%
+%%%%%%%%%%%%%%%%
+\section*{Question 2}
+\input{src/question2}
+
+%%%%%%%%%%%%%%%%
+%% Bibliograp %%
+%%%%%%%%%%%%%%%%
+\begin{thebibliography}{9}
+
+\bibitem{concept_of_cointensive_precisiation}
+    L.A. Zadeh,
+    \href{http://www.math.s.chiba-u.ac.jp/~yasuda/open2all/Paris06/IPMU2006/HTML/FINALPAPERS/P703.PDF}{"The Concept of Cointensive Precisiation - A key to Mechanization of Natural Language Understanding"}.
+
+\bibitem{is_there_a_need_for_fuzzy_logic}
+    L.A. Zadeh,
+    \href{http://www.sciencedirect.com/science/article/pii/S0020025508000716}{"Is there a need for fuzzy logic?"}, In Information Sciences, Volume 178, Issue 13, 2008, Pages 2751-2779, ISSN 0020-0255.
+
+\end{thebibliography}
 
 \end{document}
