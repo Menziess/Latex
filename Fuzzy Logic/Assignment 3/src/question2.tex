@@ -3,20 +3,23 @@
 
 
 % (a) What is the main point of the text in your own words? How do you think it is developed?
-The introduction and abstract of this text shows some advantages that T2 FSs may have over T1 FSs. Each advantage is explained and supported by references to approaches used in the comparisons.
+The interesting bits of this text show some significant arguments that have
+been made to pin down the differences between T2 and T1 FSs. Each argument is
+explained and supported by references to approaches used in the comparisons.
 % (b) Identify the purpose and impact of the text and express them in your own words.
-The text is aimed to help the reader understand the improvements that T2 FSs may have over T1 FSs, and that it's important to first understand the main differences between the two. \\
+The text is aimed to help the reader understand the improvements that T2 FSs may have over T1 FSs, by concisely summing up rudimentary differences between the two. In the final part of the introduction, he explains how the rest of his paper is composed. \\
 
 % (c) What idea(s) stood out to you? Why? Were they completely new to you or were they in opposition to existing scholarship that you are aware of or you have used before? (You may either focus on one idea or refer to the entire selected section and discuss 2-3 ideas that enhance your understanding.)
-Wu writes: "Using IT2 FSs to represent FLC inputs and outputs will result in the reduction of the rulebase when compared to using T1 FSs" \cite{differences_between_it2_and_it1}, which caught my attention, because rule explosion would cause the performance of one of my applications to drop.
+The second argument of the list in the introduction states: "Using IT2 FSs to represent FLC inputs and outputs will result in the reduction of the rulebase when compared to using T1 FSs" \cite{differences_between_it2_and_it1}, which caught my attention in particular, because rule explosion has been one of the biggest challenges of my project involving fuzzy logic this year.
+In our project, the amount of input and output variables we defined, depending on the amount of so called features-lists. A more complex in-depth system would depend on more features, and thus increase the amount of input and output variables linearly. Each input and output variable had three membership functions. The number of rules required to cover all possible input variations for a three-term fuzzy controller is $3^n$ for n feature-lists. \\
+
 % (d) What are the observations, opinions or experiences that shape your understanding of this text?
-During the lectures at the University of Amsterdam, the main differences were discussed \cite{lecture_6_types_of_fl_and_t2_fs}.  \\
+IT2 FSs were brought up during the lectures at the University of Amsterdam, when we were in a later stage of development of the project, but didn't mentioned this particular feat of rule reduction \cite{lecture_6_types_of_fl_and_t2_fs}. \\
 
 % (e) Do you agree or disagree with this text/argument? Why? Give elaborate reasoning.
-e \\
+While I agree with Wu that more input and output domains could be covered with fewer FSs, using the broader footprint of uncertainty, I doubt that this improvement would be beneficial in our solution. A case could be made that a six-term fuzzy controller could have it's number of terms shrunk to four terms, by representing the second and third term by the FOU of the IT2 fuzzy set, and the fourth and fifth term alike. In my opinion, this wouldn't work for a three-term fuzzy controller, because of the inherent asymmetric shape, and low amount of terms. The end result would either be two terms combined, leaving an asymmetric shape behind, or three terms covered by one single IT2 FS, spoiling the benefits of these mf's all together. \\
 
 % (f) How does this text reinforce your existing ideas? How does this text challenge your existing ideas or assumptions?
-f \\
-
-% (g) How does this text help you to better understand this topic or explore this ﬁeld of study/discipline?
-g
+After reading the introduction, I cannot say that my knowledge about the subject has particularly grown. But my interest in the subject has. I've also taken the opportunity to read through some of the other pages of the paper, which seems to contain more concrete material about the subject.
+% (g) How does this text help you to better understand this topic or explore this field of study/discipline?
+The fundamental differences discussed in this paper have broaden my view on the advantages T2 FSs have to offer.
