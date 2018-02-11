@@ -1,0 +1,175 @@
+%%%%%%%%%%%%%%%%
+%% Preambule  %%
+%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{upgreek}
+\usepackage{enumerate}
+\usepackage{enumitem}   %
+\usepackage{multicol}
+\usepackage{scrextend}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{subcaption} % 2 column images
+\usepackage[all]{xy}
+\usepackage{tikz-qtree}
+\usepackage{latexsym}
+\usepackage{forest}
+\usepackage[margin=2.5cm]{geometry}
+\input{../../Template/fitch.sty}
+
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+
+\lhead{\opdrachtNaam}
+\rhead{\naam(\studentNummer)}
+\rfoot{Pagina\ \thepage\ van\ \pageref{LastPage}}
+\lfoot{\datum}
+\cfoot{}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\newcommand{\E}{\exists}
+\newcommand{\A}{\forall}
+
+\newcommand{\ccen}[2]{\llap{$#1$}${}\mathrel{\circ}{}$\rlap{$#2$}}
+
+%%%%%%%%%%%%%%
+%% Gegevens %%
+%%%%%%%%%%%%%%
+
+\newcommand{\naam}          {Stefan Schenk}
+\newcommand{\studentNummer} {11881798}
+\newcommand{\opdrachtNaam}  {Summary}
+\newcommand{\datum}         {Februari 2018}
+
+%%%%%%%%%%%%%%%%
+%% Antwoorden %%
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Examen 1:
+
+\subsection*{Opgave 1}
+Gegeven zijn de verzameling S van AI-studenten en L van laptops. Tussen deze verzamelingen gelden de relaties $B \subseteq S \times L$ (bezitten) en $G \subseteq S \times L$ (gebruiken). Formaliseer onderstaande frases in de taal van de verzamelingenleer. (Tip: je mag domein en bereik (range) gebruiken.)
+
+\begin{enumerate}[label=\alph*]
+
+  \item Iedere AI-student gebruikt de laptops die hij of zij bezit.
+
+  \item Iedere AI-student bezit een laptop.
+
+  \item Er zijn AI-studenten die laptops gebruiken die van niemand zijn.
+
+\end{enumerate}
+
+
+\subsection*{Opgave 2}
+Gegeven zijn de volgende verzamelingen:
+
+\[ A=\{a, \emptyset\} \quad B=\{b, \{a,\emptyset\}\} \quad C=\{a, b\}\]
+
+\begin{enumerate}[label=\alph*]
+
+  \item Welke van de volgende uitspraken zijn waar en welke niet?
+
+        \[ a \in A, \quad a \in B, \quad A \in B, \quad A \subseteq B\]
+
+  \item Geef de volgende verzamelingen door hun elementen op te sommen.
+
+		\[ B \cap C, \quad A \times C, \quad C-B, \quad \mathcal{P}(A)\]
+
+\end{enumerate}
+
+
+\subsection*{Opgave 3}
+Beschouw de volgende relatie R over de verzameling $A = \{0, 1, 2, 3\}$.
+
+	\[ R=\{ \langle0, 3\rangle,
+			\langle1, 0\rangle,
+			\langle3, 2\rangle\}\]
+
+\begin{enumerate}[label=\alph*]
+
+	\item Ga na of de relatie $R$ reflexief, irreflexief, symmetrisch, asymmetrisch en/of antisymmetrisch is. Beargumenteer je antwoord!
+
+	\item De relatie $R$ is niet transitief. Welke paren moeten we voegen aan $R$ om een transitieve relatie te krijgen? (Noem alleen paren die absoluut noodzakelijk zijn om van $R$ een transitieve relatie te maken.)
+
+\end{enumerate}
+
+
+\subsection*{Opgave 4}
+Zij $\{0,1\}*$ de verzameling van eindige rijtjes bestaande uit de symbolen 0 en 1. (Typische elementen zijn dus 011000, 100010 en 1010100.) We definieren inductief een verzameling $A \subseteq \{0, 1\}*$, als volgt:
+
+\begin{description}[font=$\bullet$\scshape\bfseries]
+
+	\item $011 \in A$.
+
+	\item Als $\sigma \in A$, dan ook $\sigma\sigma \in A$ en $11\sigma0 \in A$. (Dat wil zeggen, als $\sigma$ in A zit, dan zit het rijtje dat je krijgt door twee keer $\sigma$ achter elkaar op te schrijven ook in A; en als $\sigma$ in A zit, zit het rijtje dat je krijgt door er 11 voor te zetten en er een 0 achter te zetten ook in A.)
+
+	\item Niets anders zit in A.
+\end{description}
+
+\begin{enumerate}[label=\alph*]
+
+	\item Definieer met recursie functies $t_0 : A \rightarrow N$ en $t_1 : A \rightarrow N$ waarbij $t_i (\sigma)$ het aantal keer is dat $i \in \{0, 1\}$ voorkomt in $\sigma \in A$.
+
+	\item Bewijs met inductie dat $t_1 (\sigma) = 2 \cdot t_0 (\sigma)$ voor alle $\sigma \in A$.
+\end{enumerate}
+
+
+\subsection*{Opgave 5}
+Vertaal de volgende zinnen in de taal van de propositielogica. Geef zoveel mogelijk de logische structuur wee en vermeld de vertaalsleutel.
+
+\begin{enumerate}[label=\alph*]
+
+	\item Als het alarm afgaat, dan is er echt brand of er is weer een oefening.
+
+	\item Hoewel het team sterker is dan vorig jaar, zal het toch ook dit jaar geen kampioen worden.
+
+	\item Baat het niet dan schaadt het niet.
+
+\end{enumerate}
+
+
+\subsection*{Opgave 6}
+Onderzoek in een waarheidstafel de volgende redeneerschema's op hun geldigheid. In geval van ongeldigheid wijs een specifieke interpretatie aan die laat zien dat het schema niet geldig is.
+
+\begin{enumerate}[label=\alph*]
+
+	\item $(p\wedge\neg q)\rightarrow r \models (\neg r) \rightarrow (p\vee q)$
+
+	\item $p\rightarrow(q\vee r), (\neg q) \leftrightarrow r \models \neg p$
+
+\end{enumerate}
+
+
+\subsection*{Opgave 7}
+Bewijs met behulp van natuurlijke deductie dat de volgende redeneringen geldig zijn.
+\begin{enumerate}[label=\alph*]
+
+	\item $(p\vee q) \rightarrow r \vdash (p \rightarrow r) \wedge (p \rightarrow r)$
+
+	\item $r \rightarrow \neg(p \vee q), (\neg p) \rightarrow q \vdash \neg r$
+
+\end{enumerate}
+
+\subsection*{Opgave 8}
+\begin{enumerate}[label=\alph*]
+
+	\item Bewijs
+
+	\item Laat met behulp van Beth tableaus zien dat de formule
+
+		\[\neg(p\wedge\neg q) \rightarrow (p \rightarrow q)\]
+
+		een tautologie is.
+
+\end{enumerate}
+
+\end{document}
